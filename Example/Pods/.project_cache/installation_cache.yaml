@@ -1,0 +1,54 @@
+BUILD_CONFIGURATIONS:
+  Debug: :debug
+  Release: :release
+CACHE_KEYS:
+  Bytedance-UnionAD:
+    BUILD_SETTINGS_CHECKSUM:
+      Bytedance-UnionAD: f661c6b3d2ca800d7b65b47a1f5db665
+    CHECKSUM: af6f65144b4fce6329946e89f262ffc8c6c1937c
+    PROJECT_NAME: Bytedance-UnionAD
+    SPECS:
+      - Bytedance-UnionAD (2.9.5.8)
+  MEAdvSDK:
+    BUILD_SETTINGS_CHECKSUM:
+      MEAdvSDK: 8747ad686f58fa12abc9af4b0fa8ffe3
+    CHECKSUM: 861be5b363fa1fc4471709bfe26375daa55b5bb2
+    PROJECT_NAME: MEAdvSDK
+    SPECS:
+      - MEAdvSDK (0.1.4)
+  MEBUADAdapter:
+    BUILD_SETTINGS_CHECKSUM:
+      MEBUADAdapter: c8bf0291952e148d65617b038f560cbb
+    CHECKSUM: 487af76a15bd2a8e0de95cc438719738cc8c26ac
+    FILES:
+      - "../../LICENSE"
+      - "../../MEBUADAdapter/Classes/MEBUADAdapter.h"
+      - "../../MEBUADAdapter/Classes/MEBUADAdapter.m"
+      - "../../README.md"
+    PROJECT_NAME: MEBUADAdapter
+    SPECS:
+      - MEBUADAdapter (0.1.0)
+  Pods-MEBUADAdapter_Example:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 2721b924bbaef9665af9320b9ecc4e17
+      Release: 2721b924bbaef9665af9320b9ecc4e17
+  Pods-MEBUADAdapter_Tests:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 7ffe0bfc20996364ea7760a5ba407707
+      Release: 7ffe0bfc20996364ea7760a5ba407707
+  Reachability:
+    BUILD_SETTINGS_CHECKSUM:
+      Reachability: 6fb325cbaedfe731700153966683b754
+    CHECKSUM: 33e18b67625424e47b6cde6d202dce689ad7af96
+    PROJECT_NAME: Reachability
+    SPECS:
+      - Reachability (3.2)
+  Realm:
+    BUILD_SETTINGS_CHECKSUM:
+      Realm: ced923823a7c6868fd8d917664a2abaa
+    CHECKSUM: 4eb04d7487bd43c0581256f40b424eafb711deff
+    PROJECT_NAME: Realm
+    SPECS:
+      - Realm (4.4.1)
+      - Realm/Headers (4.4.1)
+OBJECT_VERSION: 46

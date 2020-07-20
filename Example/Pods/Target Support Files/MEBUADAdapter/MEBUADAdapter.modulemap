@@ -1,0 +1,6 @@
+framework module MEBUADAdapter {
+  umbrella header "MEBUADAdapter-umbrella.h"
+
+  export *
+  module * { export * }
+}
