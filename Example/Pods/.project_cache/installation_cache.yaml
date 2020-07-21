@@ -19,7 +19,7 @@ CACHE_KEYS:
   MEBUADAdapter:
     BUILD_SETTINGS_CHECKSUM:
       MEBUADAdapter: c8bf0291952e148d65617b038f560cbb
-    CHECKSUM: 487af76a15bd2a8e0de95cc438719738cc8c26ac
+    CHECKSUM: 7db921215762d0815d6598ba037ee518466858bb
     FILES:
       - "../../LICENSE"
       - "../../MEBUADAdapter/Classes/MEBUADAdapter.h"
@@ -27,7 +27,7 @@ CACHE_KEYS:
       - "../../README.md"
     PROJECT_NAME: MEBUADAdapter
     SPECS:
-      - MEBUADAdapter (0.1.0)
+      - MEBUADAdapter (0.1.1)
   Pods-MEBUADAdapter_Example:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 2721b924bbaef9665af9320b9ecc4e17

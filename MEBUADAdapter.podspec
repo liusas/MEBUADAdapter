@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MEBUADAdapter'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A adapter of BUAD for aggregation SDK'
 
 # This description is used to generate tags and improve search results.
@@ -37,6 +37,6 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
 #   s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency "Bytedance-UnionAD"
+  s.dependency "Bytedance-UnionAD", '2.9.5.8'
   s.dependency "MEAdvSDK", '0.1.4'
 end
