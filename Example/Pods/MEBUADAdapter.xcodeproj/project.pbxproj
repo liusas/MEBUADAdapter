@@ -13,16 +13,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0332AFEC24C6FDC000045886 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK */;
+			proxyType = 2;
+			remoteGlobalIDString = 04F266C99B08DD454D7A13D9FBCD89AB;
+			remoteInfo = MEAdvSDK;
+		};
 		CFB533B73D895EB41F9CF6BDDFF499FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK.xcodeproj */;
+			containerPortal = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK */;
 			proxyType = 1;
 			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
 			remoteInfo = MEAdvSDK;
 		};
 		D9FBA6BF270C823215F0E309EE2D1629 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD.xcodeproj */;
+			containerPortal = 1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD */;
 			proxyType = 1;
 			remoteGlobalIDString = 5332E9233532B4756DF3841BFF2A4D94;
 			remoteInfo = "Bytedance-UnionAD";
@@ -32,15 +39,15 @@
 /* Begin PBXFileReference section */
 		0F99EA24FF3EE23FDD385E0CDC69C92D /* MEBUADAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MEBUADAdapter-prefix.pch"; sourceTree = "<group>"; };
 		1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Bytedance-UnionAD"; path = "Bytedance-UnionAD.xcodeproj"; sourceTree = "<group>"; };
-		3141D4CD663BEE09B504191C390DBA09 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		3141D4CD663BEE09B504191C390DBA09 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4B25B498E7A8194BEE49EDA2BF46370E /* MEBUADAdapter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEBUADAdapter.xcconfig; sourceTree = "<group>"; };
 		5802483A928FEB05F9216E7480279E15 /* MEBUADAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MEBUADAdapter.m; path = MEBUADAdapter/Classes/MEBUADAdapter.m; sourceTree = "<group>"; };
-		7C46F3E706550229B09DF2F25A8B6B3F /* libMEBUADAdapter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMEBUADAdapter.a; path = libMEBUADAdapter.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E70AF77FE4F79B863E18752F8C8C983 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7C46F3E706550229B09DF2F25A8B6B3F /* libMEBUADAdapter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMEBUADAdapter.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E70AF77FE4F79B863E18752F8C8C983 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEAdvSDK; path = MEAdvSDK.xcodeproj; sourceTree = "<group>"; };
 		CABDD2D2FE3E049F4631B4B3038AD2DA /* MEBUADAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MEBUADAdapter.h; path = MEBUADAdapter/Classes/MEBUADAdapter.h; sourceTree = "<group>"; };
 		DD387AA619E70E36E483DE89654CFBBB /* MEBUADAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MEBUADAdapter-dummy.m"; sourceTree = "<group>"; };
-		F9E6A4E3A05600DBF459015334A609A4 /* MEBUADAdapter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MEBUADAdapter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F9E6A4E3A05600DBF459015334A609A4 /* MEBUADAdapter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MEBUADAdapter.podspec; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +61,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0332AF9C24C6FC3D00045886 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0332AFED24C6FDC000045886 /* libMEAdvSDK.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0332AF9E24C6FC3D00045886 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4BF2FFEACDDCF4FD7E150E3B300591D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,9 +198,11 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 0332AF9E24C6FC3D00045886 /* Products */;
 					ProjectRef = 1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD */;
 				},
 				{
+					ProductGroup = 0332AF9C24C6FC3D00045886 /* Products */;
 					ProjectRef = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK */;
 				},
 			);
@@ -188,6 +212,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0332AFED24C6FDC000045886 /* libMEAdvSDK.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMEAdvSDK.a;
+			remoteRef = 0332AFEC24C6FDC000045886 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B0AA51E813051A9CDC698F05DDD87FA /* Sources */ = {
@@ -292,8 +326,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
