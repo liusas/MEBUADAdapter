@@ -94,7 +94,7 @@
     return YES;
 }
 
-- (void)stopSplashRender {
+- (void)stopSplashRenderWithPosid:(NSString *)posid {
     self.needShow = NO;
 }
 
