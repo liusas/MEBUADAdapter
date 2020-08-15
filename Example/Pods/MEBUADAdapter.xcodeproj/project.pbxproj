@@ -7,29 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29D0C3FF751A5CFE654EDBA4CB587642 /* MEBUADAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802483A928FEB05F9216E7480279E15 /* MEBUADAdapter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		83BD577806CC522A7A98F5BA8D3A2FE3 /* MEBUADAdapter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD387AA619E70E36E483DE89654CFBBB /* MEBUADAdapter-dummy.m */; };
-		FD9A6B82C871311FB0D1600F8484A3E0 /* MEBUADAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = CABDD2D2FE3E049F4631B4B3038AD2DA /* MEBUADAdapter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3B9C756C63486043D9B41582E820E446 /* MEBUADAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = F5370D8CC450F9F17EA1CACDEFE10014 /* MEBUADAdapter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		62708378922C8F3768CBBDE96828F7D2 /* MEBUADAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = BA787D6FFB62FC62C83EF6EFE630C060 /* MEBUADAdapter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		650CC5579FCEAEF216EA423827637034 /* MEBUADAdapter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC2EE624BEA6460475B34A262A4E349 /* MEBUADAdapter-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0332AFEC24C6FDC000045886 /* PBXContainerItemProxy */ = {
+		58677CA876CA9DDB4147A01BE11901DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK */;
-			proxyType = 2;
-			remoteGlobalIDString = 04F266C99B08DD454D7A13D9FBCD89AB;
-			remoteInfo = MEAdvSDK;
-		};
-		CFB533B73D895EB41F9CF6BDDFF499FE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK */;
+			containerPortal = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
 			remoteInfo = MEAdvSDK;
 		};
-		D9FBA6BF270C823215F0E309EE2D1629 /* PBXContainerItemProxy */ = {
+		8A1AAC615C83C3151936D944BE494649 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD */;
+			containerPortal = 1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 5332E9233532B4756DF3841BFF2A4D94;
 			remoteInfo = "Bytedance-UnionAD";
@@ -37,21 +30,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F99EA24FF3EE23FDD385E0CDC69C92D /* MEBUADAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MEBUADAdapter-prefix.pch"; sourceTree = "<group>"; };
 		1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Bytedance-UnionAD"; path = "Bytedance-UnionAD.xcodeproj"; sourceTree = "<group>"; };
-		3141D4CD663BEE09B504191C390DBA09 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4B25B498E7A8194BEE49EDA2BF46370E /* MEBUADAdapter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEBUADAdapter.xcconfig; sourceTree = "<group>"; };
-		5802483A928FEB05F9216E7480279E15 /* MEBUADAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MEBUADAdapter.m; path = MEBUADAdapter/Classes/MEBUADAdapter.m; sourceTree = "<group>"; };
-		7C46F3E706550229B09DF2F25A8B6B3F /* libMEBUADAdapter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMEBUADAdapter.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E70AF77FE4F79B863E18752F8C8C983 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		21A7A349B12CA74CF323FE6FFF02C739 /* MEBUADAdapter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEBUADAdapter.debug.xcconfig; sourceTree = "<group>"; };
+		5293139898A20A4AFCBC8A092276FC64 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5C258EE6E0470508D105DF338878DDCB /* MEBUADAdapter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MEBUADAdapter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7C46F3E706550229B09DF2F25A8B6B3F /* libMEBUADAdapter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMEBUADAdapter.a; path = libMEBUADAdapter.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEAdvSDK; path = MEAdvSDK.xcodeproj; sourceTree = "<group>"; };
-		CABDD2D2FE3E049F4631B4B3038AD2DA /* MEBUADAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MEBUADAdapter.h; path = MEBUADAdapter/Classes/MEBUADAdapter.h; sourceTree = "<group>"; };
-		DD387AA619E70E36E483DE89654CFBBB /* MEBUADAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MEBUADAdapter-dummy.m"; sourceTree = "<group>"; };
-		F9E6A4E3A05600DBF459015334A609A4 /* MEBUADAdapter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MEBUADAdapter.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		9BCE790821E4652BD48BB58262A8A172 /* MEBUADAdapter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEBUADAdapter.release.xcconfig; sourceTree = "<group>"; };
+		BA787D6FFB62FC62C83EF6EFE630C060 /* MEBUADAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MEBUADAdapter.h; path = MEBUADAdapter/Classes/MEBUADAdapter.h; sourceTree = "<group>"; };
+		C4C7524F9DF6C806C0095266D848E1F3 /* MEBUADAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MEBUADAdapter-prefix.pch"; sourceTree = "<group>"; };
+		DCC2EE624BEA6460475B34A262A4E349 /* MEBUADAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MEBUADAdapter-dummy.m"; sourceTree = "<group>"; };
+		E79E601E3CD3280C9264BA2648E088E7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F5370D8CC450F9F17EA1CACDEFE10014 /* MEBUADAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MEBUADAdapter.m; path = MEBUADAdapter/Classes/MEBUADAdapter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		34100CA374F49ABE85661836098C57FC /* Frameworks */ = {
+		DA9D5AC72FFD298AB976ED6A9CB33A4D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,19 +55,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0332AF9C24C6FC3D00045886 /* Products */ = {
+		06F856759977BE5F767E6C7FDFEB587E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0332AFED24C6FDC000045886 /* libMEAdvSDK.a */,
+				DCC2EE624BEA6460475B34A262A4E349 /* MEBUADAdapter-dummy.m */,
+				C4C7524F9DF6C806C0095266D848E1F3 /* MEBUADAdapter-prefix.pch */,
+				21A7A349B12CA74CF323FE6FFF02C739 /* MEBUADAdapter.debug.xcconfig */,
+				9BCE790821E4652BD48BB58262A8A172 /* MEBUADAdapter.release.xcconfig */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		0332AF9E24C6FC3D00045886 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MEBUADAdapter";
 			sourceTree = "<group>";
 		};
 		4BF2FFEACDDCF4FD7E150E3B300591D6 /* Products */ = {
@@ -84,26 +75,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		93FB534EAF56D512833ED65C57E02628 /* Pod */ = {
+		A05C59B60DBDC2707238F135897389FE /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				7E70AF77FE4F79B863E18752F8C8C983 /* LICENSE */,
-				F9E6A4E3A05600DBF459015334A609A4 /* MEBUADAdapter.podspec */,
-				3141D4CD663BEE09B504191C390DBA09 /* README.md */,
+				5293139898A20A4AFCBC8A092276FC64 /* LICENSE */,
+				5C258EE6E0470508D105DF338878DDCB /* MEBUADAdapter.podspec */,
+				E79E601E3CD3280C9264BA2648E088E7 /* README.md */,
 			);
 			name = Pod;
-			sourceTree = "<group>";
-		};
-		A6F4CDD2E990B9ADA5BDDA74DB1B1DBB /* MEBUADAdapter */ = {
-			isa = PBXGroup;
-			children = (
-				CABDD2D2FE3E049F4631B4B3038AD2DA /* MEBUADAdapter.h */,
-				5802483A928FEB05F9216E7480279E15 /* MEBUADAdapter.m */,
-				93FB534EAF56D512833ED65C57E02628 /* Pod */,
-				AF05931B9AEF7AD5C3ECAD364692068A /* Support Files */,
-			);
-			name = MEBUADAdapter;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		A8B5533E648F4AD1414F17CB7F81172A = {
@@ -111,20 +90,9 @@
 			children = (
 				B68E4B08A902288827F4DE15E8DA2387 /* Dependencies */,
 				E7494A5E809BC6D425F871DAAFD653C5 /* Frameworks */,
-				A6F4CDD2E990B9ADA5BDDA74DB1B1DBB /* MEBUADAdapter */,
+				FBB2058C8656FA849D09903FE0CAF9CD /* MEBUADAdapter */,
 				4BF2FFEACDDCF4FD7E150E3B300591D6 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		AF05931B9AEF7AD5C3ECAD364692068A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4B25B498E7A8194BEE49EDA2BF46370E /* MEBUADAdapter.xcconfig */,
-				DD387AA619E70E36E483DE89654CFBBB /* MEBUADAdapter-dummy.m */,
-				0F99EA24FF3EE23FDD385E0CDC69C92D /* MEBUADAdapter-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/MEBUADAdapter";
 			sourceTree = "<group>";
 		};
 		B68E4B08A902288827F4DE15E8DA2387 /* Dependencies */ = {
@@ -143,14 +111,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FBB2058C8656FA849D09903FE0CAF9CD /* MEBUADAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				BA787D6FFB62FC62C83EF6EFE630C060 /* MEBUADAdapter.h */,
+				F5370D8CC450F9F17EA1CACDEFE10014 /* MEBUADAdapter.m */,
+				A05C59B60DBDC2707238F135897389FE /* Pod */,
+				06F856759977BE5F767E6C7FDFEB587E /* Support Files */,
+			);
+			name = MEBUADAdapter;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		38F6869564973698F73488FB6F51EE8E /* Headers */ = {
+		D38DFAD9A13CECD876F6FC5BE66872AC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD9A6B82C871311FB0D1600F8484A3E0 /* MEBUADAdapter.h in Headers */,
+				62708378922C8F3768CBBDE96828F7D2 /* MEBUADAdapter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,17 +139,17 @@
 /* Begin PBXNativeTarget section */
 		B15F76109BA310E5F33DFF6121526034 /* MEBUADAdapter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF0ED29BF5F4A18FAAEA00614703276E /* Build configuration list for PBXNativeTarget "MEBUADAdapter" */;
+			buildConfigurationList = C7C60301FB6048CC9A29E4D8C30DE308 /* Build configuration list for PBXNativeTarget "MEBUADAdapter" */;
 			buildPhases = (
-				38F6869564973698F73488FB6F51EE8E /* Headers */,
-				3B0AA51E813051A9CDC698F05DDD87FA /* Sources */,
-				34100CA374F49ABE85661836098C57FC /* Frameworks */,
+				D38DFAD9A13CECD876F6FC5BE66872AC /* Headers */,
+				242B7A68A9A76C8E1B6E5DBD79BFFF42 /* Sources */,
+				DA9D5AC72FFD298AB976ED6A9CB33A4D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AEE413DCBC29738BFA86C7D1BF1EC96C /* PBXTargetDependency */,
-				1CC2A7B77655EF3C752BCABDD66A7A5E /* PBXTargetDependency */,
+				BD69EECFF362B58B3CE41C83CFA2D34B /* PBXTargetDependency */,
+				BCD24570A630C8576FA8064E5B1D66BF /* PBXTargetDependency */,
 			);
 			name = MEBUADAdapter;
 			productName = MEBUADAdapter;
@@ -198,11 +178,9 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0332AF9E24C6FC3D00045886 /* Products */;
 					ProjectRef = 1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD */;
 				},
 				{
-					ProductGroup = 0332AF9C24C6FC3D00045886 /* Products */;
 					ProjectRef = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK */;
 				},
 			);
@@ -213,45 +191,35 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		0332AFED24C6FDC000045886 /* libMEAdvSDK.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMEAdvSDK.a;
-			remoteRef = 0332AFEC24C6FDC000045886 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXSourcesBuildPhase section */
-		3B0AA51E813051A9CDC698F05DDD87FA /* Sources */ = {
+		242B7A68A9A76C8E1B6E5DBD79BFFF42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83BD577806CC522A7A98F5BA8D3A2FE3 /* MEBUADAdapter-dummy.m in Sources */,
-				29D0C3FF751A5CFE654EDBA4CB587642 /* MEBUADAdapter.m in Sources */,
+				650CC5579FCEAEF216EA423827637034 /* MEBUADAdapter-dummy.m in Sources */,
+				3B9C756C63486043D9B41582E820E446 /* MEBUADAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1CC2A7B77655EF3C752BCABDD66A7A5E /* PBXTargetDependency */ = {
+		BCD24570A630C8576FA8064E5B1D66BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MEAdvSDK;
-			targetProxy = CFB533B73D895EB41F9CF6BDDFF499FE /* PBXContainerItemProxy */;
+			targetProxy = 58677CA876CA9DDB4147A01BE11901DA /* PBXContainerItemProxy */;
 		};
-		AEE413DCBC29738BFA86C7D1BF1EC96C /* PBXTargetDependency */ = {
+		BD69EECFF362B58B3CE41C83CFA2D34B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Bytedance-UnionAD";
-			targetProxy = D9FBA6BF270C823215F0E309EE2D1629 /* PBXContainerItemProxy */;
+			targetProxy = 8A1AAC615C83C3151936D944BE494649 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		326751FDC15B45C01E26E82BF7CE1833 /* Debug */ = {
+		6EE7FF1C058BC02B90AA3EABF384A6C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B25B498E7A8194BEE49EDA2BF46370E /* MEBUADAdapter.xcconfig */;
+			baseConfigurationReference = 21A7A349B12CA74CF323FE6FFF02C739 /* MEBUADAdapter.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -272,6 +240,31 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		ABFBC0C86A7D415141ED023B0588B82D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BCE790821E4652BD48BB58262A8A172 /* MEBUADAdapter.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/MEBUADAdapter/MEBUADAdapter-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MEBUADAdapter;
+				PRODUCT_NAME = MEBUADAdapter;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 		AC32E695311209C9B3DBE3D567E39EBB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -326,34 +319,10 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		AEC502183316B43F123F5A7A59A46F37 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B25B498E7A8194BEE49EDA2BF46370E /* MEBUADAdapter.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/MEBUADAdapter/MEBUADAdapter-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = MEBUADAdapter;
-				PRODUCT_NAME = MEBUADAdapter;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -424,11 +393,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF0ED29BF5F4A18FAAEA00614703276E /* Build configuration list for PBXNativeTarget "MEBUADAdapter" */ = {
+		C7C60301FB6048CC9A29E4D8C30DE308 /* Build configuration list for PBXNativeTarget "MEBUADAdapter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				326751FDC15B45C01E26E82BF7CE1833 /* Debug */,
-				AEC502183316B43F123F5A7A59A46F37 /* Release */,
+				6EE7FF1C058BC02B90AA3EABF384A6C8 /* Debug */,
+				ABFBC0C86A7D415141ED023B0588B82D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

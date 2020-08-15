@@ -19,37 +19,40 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXFileReference section */
-		2C6CE45753B1CD6138F8086D1B11B00E /* BUAdSDK.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = BUAdSDK.bundle; path = "Bytedance-UnionAd/Frameworks/BUAdSDK.bundle"; sourceTree = "<group>"; };
-		2C719A6C287420E4E8F0BCD0B1606427 /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BUAdSDK.framework; path = "Bytedance-UnionAd/Frameworks/BUAdSDK.framework"; sourceTree = "<group>"; };
-		4B79575B9267DCB5081B43FB5F688B32 /* Bytedance-UnionAD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Bytedance-UnionAD.xcconfig"; sourceTree = "<group>"; };
-		FFFC12C4988576E771CD87488140D28E /* BUFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BUFoundation.framework; path = "Bytedance-UnionAd/Frameworks/BUFoundation.framework"; sourceTree = "<group>"; };
+		2CF7C34FB21688034EF8D2A8620FD56B /* BUAdSDK.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = BUAdSDK.bundle; path = "Bytedance-UnionAd/Frameworks/BUAdSDK.bundle"; sourceTree = "<group>"; };
+		46957EACE81808B8BA3E58B2C0406BB7 /* BUFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BUFoundation.framework; path = "Bytedance-UnionAd/Frameworks/BUFoundation.framework"; sourceTree = "<group>"; };
+		56CAD18A322DE16CBF2E39DB5CD9B8A4 /* Bytedance-UnionAD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Bytedance-UnionAD.debug.xcconfig"; sourceTree = "<group>"; };
+		633E124EBF691E56C206F7C28B5D90BA /* Bytedance-UnionAD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Bytedance-UnionAD.release.xcconfig"; sourceTree = "<group>"; };
+		A9023F56A4FAABAF5E6F9CF1C1477EC2 /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BUAdSDK.framework; path = "Bytedance-UnionAd/Frameworks/BUAdSDK.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		04CBD0822A00983E95C78741B3410EB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9023F56A4FAABAF5E6F9CF1C1477EC2 /* BUAdSDK.framework */,
+				46957EACE81808B8BA3E58B2C0406BB7 /* BUFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		45958152C02758F09F4CA6E0CE12ADC3 = {
 			isa = PBXGroup;
 			children = (
-				B5F752A397DE352C21F1438850931B3B /* Bytedance-UnionAD */,
+				FA31871F35D481EFE35468E58CD837EB /* Bytedance-UnionAD */,
 				A3E02BFEE55433B28217BBE1BB71BF15 /* Frameworks */,
 				BD90DF1A0E0625F5A45365392E994CD2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		509B8099DD5A498B046504B47360818A /* Support Files */ = {
+		965BBBC40969FDBDEB33D9A97CA0765E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4B79575B9267DCB5081B43FB5F688B32 /* Bytedance-UnionAD.xcconfig */,
+				56CAD18A322DE16CBF2E39DB5CD9B8A4 /* Bytedance-UnionAD.debug.xcconfig */,
+				633E124EBF691E56C206F7C28B5D90BA /* Bytedance-UnionAD.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Bytedance-UnionAD";
-			sourceTree = "<group>";
-		};
-		7F327366D3813BAAF3DEF77EF99D3791 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2C6CE45753B1CD6138F8086D1B11B00E /* BUAdSDK.bundle */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		A3E02BFEE55433B28217BBE1BB71BF15 /* Frameworks */ = {
@@ -59,17 +62,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B5F752A397DE352C21F1438850931B3B /* Bytedance-UnionAD */ = {
-			isa = PBXGroup;
-			children = (
-				FAFCB7CD894A6498843FA2D91B628F69 /* Frameworks */,
-				7F327366D3813BAAF3DEF77EF99D3791 /* Resources */,
-				509B8099DD5A498B046504B47360818A /* Support Files */,
-			);
-			name = "Bytedance-UnionAD";
-			path = "Bytedance-UnionAD";
-			sourceTree = "<group>";
-		};
 		BD90DF1A0E0625F5A45365392E994CD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,13 +69,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FAFCB7CD894A6498843FA2D91B628F69 /* Frameworks */ = {
+		F54999AC0D0F8F6AF6127A86E4E09805 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2C719A6C287420E4E8F0BCD0B1606427 /* BUAdSDK.framework */,
-				FFFC12C4988576E771CD87488140D28E /* BUFoundation.framework */,
+				2CF7C34FB21688034EF8D2A8620FD56B /* BUAdSDK.bundle */,
 			);
-			name = Frameworks;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FA31871F35D481EFE35468E58CD837EB /* Bytedance-UnionAD */ = {
+			isa = PBXGroup;
+			children = (
+				04CBD0822A00983E95C78741B3410EB1 /* Frameworks */,
+				F54999AC0D0F8F6AF6127A86E4E09805 /* Resources */,
+				965BBBC40969FDBDEB33D9A97CA0765E /* Support Files */,
+			);
+			name = "Bytedance-UnionAD";
+			path = "Bytedance-UnionAD";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +116,20 @@
 /* End PBXProject section */
 
 /* Begin XCBuildConfiguration section */
+		038E13CBF9AA574AE5F05C32E17EBC94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 633E124EBF691E56C206F7C28B5D90BA /* Bytedance-UnionAD.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		463FD50A12DB560287CBC192A4576CD7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -238,9 +254,9 @@
 			};
 			name = Debug;
 		};
-		C4B5F12797242984D3115E3280EAAAFD /* Debug */ = {
+		ED65767E4CF385931E03029DE346DDB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B79575B9267DCB5081B43FB5F688B32 /* Bytedance-UnionAD.xcconfig */;
+			baseConfigurationReference = 56CAD18A322DE16CBF2E39DB5CD9B8A4 /* Bytedance-UnionAD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -250,20 +266,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
-		};
-		EF326A9A3D3172AD0D9E7A48E0E54904 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B79575B9267DCB5081B43FB5F688B32 /* Bytedance-UnionAD.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -280,8 +282,8 @@
 		AF793116397F8E46335C063306B3A33B /* Build configuration list for PBXAggregateTarget "Bytedance-UnionAD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C4B5F12797242984D3115E3280EAAAFD /* Debug */,
-				EF326A9A3D3172AD0D9E7A48E0E54904 /* Release */,
+				ED65767E4CF385931E03029DE346DDB5 /* Debug */,
+				038E13CBF9AA574AE5F05C32E17EBC94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

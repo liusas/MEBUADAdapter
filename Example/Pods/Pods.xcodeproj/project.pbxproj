@@ -7,52 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A30AA488D83F7EEF0ABFFE98372741F /* Pods-MEBUADAdapter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9FA16A720ADB2D41273057AD94FC9 /* Pods-MEBUADAdapter_Example-dummy.m */; };
-		CCC8298EC4C938742D14E89CB718DACE /* Pods-MEBUADAdapter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 702D0E4AFEAD7CCA9EA22BB81E45A081 /* Pods-MEBUADAdapter_Tests-dummy.m */; };
+		A1814BA82434A2F063522056EF0512DD /* Pods-MEBUADAdapter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 702D0E4AFEAD7CCA9EA22BB81E45A081 /* Pods-MEBUADAdapter_Tests-dummy.m */; };
+		D81361B3E933FD28F35E8D7B375D6D82 /* Pods-MEBUADAdapter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9FA16A720ADB2D41273057AD94FC9 /* Pods-MEBUADAdapter_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		13376103EE1FA2C5EC29F66199C30D82 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55078CFC43A7E3B51F803DA3A7E01271 /* Reachability.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DA1EBD7850A215E94DBD19A247725F9F;
-			remoteInfo = Reachability;
-		};
-		1D0BB7CB6D54F0A63116B00BF4CDBCE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA01DA809C59CE072707D0B3D5105E40 /* MEAdvSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
-			remoteInfo = MEAdvSDK;
-		};
-		5401A7F9B9CD428A016CF4400B817730 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AD9727EC4D3260E78C16833B44E178D4 /* MEBUADAdapter.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B15F76109BA310E5F33DFF6121526034;
-			remoteInfo = MEBUADAdapter;
-		};
-		78480480C75B6CACC0CB880F0DEE16E3 /* PBXContainerItemProxy */ = {
+		2F99FB1E208DD6D036D4A267380468BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0C0E9DFCAC2A661FDE25614033DEF7A6 /* Bytedance-UnionAD.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 5332E9233532B4756DF3841BFF2A4D94;
 			remoteInfo = "Bytedance-UnionAD";
 		};
-		C6A2AE06643E9CEF41A4FD08E55526E6 /* PBXContainerItemProxy */ = {
+		3A0AA8C91E414BC218A8EB9013DBA0D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DA0CC6CF5E8304639A50A9FE5A743BD;
+			remoteInfo = "Pods-MEBUADAdapter_Example";
+		};
+		530FA79CEA3348ED67D641588076E8EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD9727EC4D3260E78C16833B44E178D4 /* MEBUADAdapter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B15F76109BA310E5F33DFF6121526034;
+			remoteInfo = MEBUADAdapter;
+		};
+		AF759FF465F3EAEAD1D2BF400CA69923 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DA9E73A4B350A7F917FA4F2C8D332C92 /* Realm.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC4AC9FBD7453D9D72102559C8F6B8AC;
 			remoteInfo = Realm;
 		};
-		EB49BDAA3774151897CC47DE95769DCB /* PBXContainerItemProxy */ = {
+		E32D242BA99768F8B052F2683D5C8744 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			containerPortal = AA01DA809C59CE072707D0B3D5105E40 /* MEAdvSDK.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9DA0CC6CF5E8304639A50A9FE5A743BD;
-			remoteInfo = "Pods-MEBUADAdapter_Example";
+			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
+			remoteInfo = MEAdvSDK;
+		};
+		F1BA9665015428E6FE33CA20441C0D1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55078CFC43A7E3B51F803DA3A7E01271 /* Reachability.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DA1EBD7850A215E94DBD19A247725F9F;
+			remoteInfo = Reachability;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -79,14 +79,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3EB76DCCB51A78171FC21DB07CB9F429 /* Frameworks */ = {
+		6158165820224BA1777DE48864B10F9E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6BC99E5FF3637B04BF519F338A923F01 /* Frameworks */ = {
+		DA95EBBF849F67636F8CC8914C05201E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,14 +182,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		913DB140109512CAE3AADEC1B3FB4D31 /* Headers */ = {
+		365C72F82982723E6346204940A4CABE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		999F6C71E2A9A3DA922F4B36959FDEF6 /* Headers */ = {
+		C4EC4DBD961C3C6F535AECA3167D8361 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -201,16 +201,16 @@
 /* Begin PBXNativeTarget section */
 		538E5C6B3505ABE421C38069D9A9E3C7 /* Pods-MEBUADAdapter_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E932AF4B1719AC46CBF86BE0D633FB40 /* Build configuration list for PBXNativeTarget "Pods-MEBUADAdapter_Tests" */;
+			buildConfigurationList = 3FFA2B1A7B5538BED7706BB7669F650A /* Build configuration list for PBXNativeTarget "Pods-MEBUADAdapter_Tests" */;
 			buildPhases = (
-				913DB140109512CAE3AADEC1B3FB4D31 /* Headers */,
-				05096438B4B479ADE282551744737117 /* Sources */,
-				6BC99E5FF3637B04BF519F338A923F01 /* Frameworks */,
+				365C72F82982723E6346204940A4CABE /* Headers */,
+				4984FC690F5388CB958FF80C8C1E4CB2 /* Sources */,
+				6158165820224BA1777DE48864B10F9E /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D54C7F72D67924998ADEA041D659C34B /* PBXTargetDependency */,
+				FFD839733FE1E45D655EFA5651917946 /* PBXTargetDependency */,
 			);
 			name = "Pods-MEBUADAdapter_Tests";
 			productName = "Pods-MEBUADAdapter_Tests";
@@ -219,20 +219,20 @@
 		};
 		9DA0CC6CF5E8304639A50A9FE5A743BD /* Pods-MEBUADAdapter_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B02A9831F15242D70AA85658BED81A91 /* Build configuration list for PBXNativeTarget "Pods-MEBUADAdapter_Example" */;
+			buildConfigurationList = 7F6F77D3489E9421BD4FC5986ADBC441 /* Build configuration list for PBXNativeTarget "Pods-MEBUADAdapter_Example" */;
 			buildPhases = (
-				999F6C71E2A9A3DA922F4B36959FDEF6 /* Headers */,
-				88DC4DC432C87C98A4886E946B0B3F32 /* Sources */,
-				3EB76DCCB51A78171FC21DB07CB9F429 /* Frameworks */,
+				C4EC4DBD961C3C6F535AECA3167D8361 /* Headers */,
+				79F3186793D3CF83B594C1D57A217E73 /* Sources */,
+				DA95EBBF849F67636F8CC8914C05201E /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C2A11292F389F5B33025E8E24B11C24A /* PBXTargetDependency */,
-				56388543DF2A39D588F6845A97823FF3 /* PBXTargetDependency */,
-				32C93C7B09A75DDB3F234D7162B4EA1E /* PBXTargetDependency */,
-				E20F53E0A7989BD84FE6EF179B9CC78C /* PBXTargetDependency */,
-				4DFD8C2DF07A1C6EF218890F752B37B9 /* PBXTargetDependency */,
+				8C2EF35D2E0296E110FE94073518AEF9 /* PBXTargetDependency */,
+				316FE84BB5FC26B675B0E7A3ECBECEE7 /* PBXTargetDependency */,
+				3852C59C0B3F30A4AF26FBFCAEF6F8FE /* PBXTargetDependency */,
+				5B3F3E77588E1DC8F20DAE84C8C7D77B /* PBXTargetDependency */,
+				707983B9E7FACC1A7CA190BBCC0332B7 /* PBXTargetDependency */,
 			);
 			name = "Pods-MEBUADAdapter_Example";
 			productName = "Pods-MEBUADAdapter_Example";
@@ -264,10 +264,10 @@
 					ProjectRef = 0C0E9DFCAC2A661FDE25614033DEF7A6 /* Bytedance-UnionAD */;
 				},
 				{
-					ProjectRef = AD9727EC4D3260E78C16833B44E178D4 /* MEBUADAdapter */;
+					ProjectRef = AA01DA809C59CE072707D0B3D5105E40 /* MEAdvSDK */;
 				},
 				{
-					ProjectRef = AA01DA809C59CE072707D0B3D5105E40 /* MEAdvSDK */;
+					ProjectRef = AD9727EC4D3260E78C16833B44E178D4 /* MEBUADAdapter */;
 				},
 				{
 					ProjectRef = 55078CFC43A7E3B51F803DA3A7E01271 /* Reachability */;
@@ -285,62 +285,62 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		05096438B4B479ADE282551744737117 /* Sources */ = {
+		4984FC690F5388CB958FF80C8C1E4CB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCC8298EC4C938742D14E89CB718DACE /* Pods-MEBUADAdapter_Tests-dummy.m in Sources */,
+				A1814BA82434A2F063522056EF0512DD /* Pods-MEBUADAdapter_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88DC4DC432C87C98A4886E946B0B3F32 /* Sources */ = {
+		79F3186793D3CF83B594C1D57A217E73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A30AA488D83F7EEF0ABFFE98372741F /* Pods-MEBUADAdapter_Example-dummy.m in Sources */,
+				D81361B3E933FD28F35E8D7B375D6D82 /* Pods-MEBUADAdapter_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		32C93C7B09A75DDB3F234D7162B4EA1E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MEBUADAdapter;
-			targetProxy = 5401A7F9B9CD428A016CF4400B817730 /* PBXContainerItemProxy */;
-		};
-		4DFD8C2DF07A1C6EF218890F752B37B9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Realm;
-			targetProxy = C6A2AE06643E9CEF41A4FD08E55526E6 /* PBXContainerItemProxy */;
-		};
-		56388543DF2A39D588F6845A97823FF3 /* PBXTargetDependency */ = {
+		316FE84BB5FC26B675B0E7A3ECBECEE7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MEAdvSDK;
-			targetProxy = 1D0BB7CB6D54F0A63116B00BF4CDBCE0 /* PBXContainerItemProxy */;
+			targetProxy = E32D242BA99768F8B052F2683D5C8744 /* PBXContainerItemProxy */;
 		};
-		C2A11292F389F5B33025E8E24B11C24A /* PBXTargetDependency */ = {
+		3852C59C0B3F30A4AF26FBFCAEF6F8FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MEBUADAdapter;
+			targetProxy = 530FA79CEA3348ED67D641588076E8EB /* PBXContainerItemProxy */;
+		};
+		5B3F3E77588E1DC8F20DAE84C8C7D77B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Reachability;
+			targetProxy = F1BA9665015428E6FE33CA20441C0D1A /* PBXContainerItemProxy */;
+		};
+		707983B9E7FACC1A7CA190BBCC0332B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Realm;
+			targetProxy = AF759FF465F3EAEAD1D2BF400CA69923 /* PBXContainerItemProxy */;
+		};
+		8C2EF35D2E0296E110FE94073518AEF9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Bytedance-UnionAD";
-			targetProxy = 78480480C75B6CACC0CB880F0DEE16E3 /* PBXContainerItemProxy */;
+			targetProxy = 2F99FB1E208DD6D036D4A267380468BF /* PBXContainerItemProxy */;
 		};
-		D54C7F72D67924998ADEA041D659C34B /* PBXTargetDependency */ = {
+		FFD839733FE1E45D655EFA5651917946 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MEBUADAdapter_Example";
 			target = 9DA0CC6CF5E8304639A50A9FE5A743BD /* Pods-MEBUADAdapter_Example */;
-			targetProxy = EB49BDAA3774151897CC47DE95769DCB /* PBXContainerItemProxy */;
-		};
-		E20F53E0A7989BD84FE6EF179B9CC78C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Reachability;
-			targetProxy = 13376103EE1FA2C5EC29F66199C30D82 /* PBXContainerItemProxy */;
+			targetProxy = 3A0AA8C91E414BC218A8EB9013DBA0D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		02A7A05983011D7C0A8E077F603153BC /* Release */ = {
+		015A23A781898C2BB1829E783386B071 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94CAF2F7D724E59F6AA464ED8F6CE769 /* Pods-MEBUADAdapter_Tests.release.xcconfig */;
+			baseConfigurationReference = B4145A23CBBA6F4EDC780C3742343B3C /* Pods-MEBUADAdapter_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -357,32 +357,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
-		};
-		0B1821E9551E74D57B1BDBF0C01C4E7B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F5D4812D325067B655B2726AF5643BB /* Pods-MEBUADAdapter_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
+			name = Debug;
 		};
 		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -448,6 +424,74 @@
 			};
 			name = Debug;
 		};
+		60E956DA841E006DA66801E60EF362B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F5D4812D325067B655B2726AF5643BB /* Pods-MEBUADAdapter_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		745C16DB7562E1B2C704A093BAF6EAFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94CAF2F7D724E59F6AA464ED8F6CE769 /* Pods-MEBUADAdapter_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7856CB5D3A486FF095D95EEC1A3E3695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDCB6AFC0711B3954BA425D8DD67C4C2 /* Pods-MEBUADAdapter_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -508,53 +552,18 @@
 			};
 			name = Release;
 		};
-		B2055E93C35BF0E311EB01BE009757E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4145A23CBBA6F4EDC780C3742343B3C /* Pods-MEBUADAdapter_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B4D97A63648E20F7476DC586E4849B43 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDCB6AFC0711B3954BA425D8DD67C4C2 /* Pods-MEBUADAdapter_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3FFA2B1A7B5538BED7706BB7669F650A /* Build configuration list for PBXNativeTarget "Pods-MEBUADAdapter_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015A23A781898C2BB1829E783386B071 /* Debug */,
+				745C16DB7562E1B2C704A093BAF6EAFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -564,20 +573,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B02A9831F15242D70AA85658BED81A91 /* Build configuration list for PBXNativeTarget "Pods-MEBUADAdapter_Example" */ = {
+		7F6F77D3489E9421BD4FC5986ADBC441 /* Build configuration list for PBXNativeTarget "Pods-MEBUADAdapter_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B4D97A63648E20F7476DC586E4849B43 /* Debug */,
-				0B1821E9551E74D57B1BDBF0C01C4E7B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E932AF4B1719AC46CBF86BE0D633FB40 /* Build configuration list for PBXNativeTarget "Pods-MEBUADAdapter_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B2055E93C35BF0E311EB01BE009757E4 /* Debug */,
-				02A7A05983011D7C0A8E077F603153BC /* Release */,
+				7856CB5D3A486FF095D95EEC1A3E3695 /* Debug */,
+				60E956DA841E006DA66801E60EF362B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

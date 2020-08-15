@@ -4,22 +4,28 @@ BUILD_CONFIGURATIONS:
 CACHE_KEYS:
   Bytedance-UnionAD:
     BUILD_SETTINGS_CHECKSUM:
-      Bytedance-UnionAD: f661c6b3d2ca800d7b65b47a1f5db665
+      Bytedance-UnionAD:
+        :debug: f661c6b3d2ca800d7b65b47a1f5db665
+        :release: f661c6b3d2ca800d7b65b47a1f5db665
     CHECKSUM: af6f65144b4fce6329946e89f262ffc8c6c1937c
     PROJECT_NAME: Bytedance-UnionAD
     SPECS:
       - Bytedance-UnionAD (2.9.5.8)
   MEAdvSDK:
     BUILD_SETTINGS_CHECKSUM:
-      MEAdvSDK: 8747ad686f58fa12abc9af4b0fa8ffe3
-    CHECKSUM: 861be5b363fa1fc4471709bfe26375daa55b5bb2
+      MEAdvSDK:
+        :debug: 8747ad686f58fa12abc9af4b0fa8ffe3
+        :release: 8747ad686f58fa12abc9af4b0fa8ffe3
+    CHECKSUM: c53edafca810b70148b43298fc3cbed507312f0e
     PROJECT_NAME: MEAdvSDK
     SPECS:
-      - MEAdvSDK (0.1.4)
+      - MEAdvSDK (0.1.7)
   MEBUADAdapter:
     BUILD_SETTINGS_CHECKSUM:
-      MEBUADAdapter: c8bf0291952e148d65617b038f560cbb
-    CHECKSUM: 7db921215762d0815d6598ba037ee518466858bb
+      MEBUADAdapter:
+        :debug: c8bf0291952e148d65617b038f560cbb
+        :release: c8bf0291952e148d65617b038f560cbb
+    CHECKSUM: b64ceb949bfc3641c11b177d471fa54c9d7f4240
     FILES:
       - "../../LICENSE"
       - "../../MEBUADAdapter/Classes/MEBUADAdapter.h"
@@ -32,23 +38,35 @@ CACHE_KEYS:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 2721b924bbaef9665af9320b9ecc4e17
       Release: 2721b924bbaef9665af9320b9ecc4e17
+    FILES:
+      - "${PODS_ROOT}/Bytedance-UnionAD/Bytedance-UnionAd/Frameworks/BUAdSDK.bundle"
+      - "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MEAdvBundle.bundle"
+      - "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MobiPubSDK.bundle"
+      - "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MRAID.bundle"
   Pods-MEBUADAdapter_Tests:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 7ffe0bfc20996364ea7760a5ba407707
       Release: 7ffe0bfc20996364ea7760a5ba407707
   Reachability:
     BUILD_SETTINGS_CHECKSUM:
-      Reachability: 6fb325cbaedfe731700153966683b754
+      Reachability:
+        :debug: 6fb325cbaedfe731700153966683b754
+        :release: 6fb325cbaedfe731700153966683b754
     CHECKSUM: 33e18b67625424e47b6cde6d202dce689ad7af96
     PROJECT_NAME: Reachability
     SPECS:
       - Reachability (3.2)
   Realm:
     BUILD_SETTINGS_CHECKSUM:
-      Realm: ced923823a7c6868fd8d917664a2abaa
+      Realm:
+        :debug: ced923823a7c6868fd8d917664a2abaa
+        :release: ced923823a7c6868fd8d917664a2abaa
     CHECKSUM: 4eb04d7487bd43c0581256f40b424eafb711deff
     PROJECT_NAME: Realm
     SPECS:
       - Realm (4.4.1)
       - Realm/Headers (4.4.1)
 OBJECT_VERSION: 46
+PLUGINS:
+  cocoapods-stats:
+    {}
