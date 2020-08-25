@@ -12,13 +12,15 @@
 #import <BUAdSDK/BUAdSDK.h>
 #import <BUAdSDK/BUSplashAdView.h>
 
-@interface MEBUADAdapter ()<BUNativeExpressAdViewDelegate, BUNativeExpressRewardedVideoAdDelegate, BUSplashAdDelegate, BUNativeExpresInterstitialAdDelegate>
+@interface MEBUADAdapter ()<BUNativeExpressAdViewDelegate, BUNativeExpressRewardedVideoAdDelegate, BUSplashAdDelegate, BUNativeExpresInterstitialAdDelegate, BUNativeExpressFullscreenVideoAdDelegate>
 /// 原生模板广告
 @property (strong, nonatomic) NSMutableArray<__kindof BUNativeExpressAdView *> *expressAdViews;
 /// 原生广告管理类
 @property (strong, nonatomic) BUNativeExpressAdManager *nativeExpressAdManager;
 /// 激励视频广告管理
 @property (nonatomic, strong) BUNativeExpressRewardedVideoAd *rewardedVideoAd;
+/// 全屏视频广告
+@property (nonatomic, strong) BUNativeExpressFullscreenVideoAd *fullscreenVideoAd;
 /// 插屏广告管理
 @property (nonatomic, strong) BUNativeExpressInterstitialAd *interstitialAd;
 
@@ -27,6 +29,9 @@
 
 /// 是否展示误点按钮
 @property (nonatomic, assign) BOOL showFunnyBtn;
+
+/// 用来弹出广告的 viewcontroller
+@property (nonatomic, strong) UIViewController *rootVC;
 
 @end
 
@@ -199,6 +204,10 @@
 }
 
 - (void)showRewardedVideoFromViewController:(UIViewController *)rootVC posid:(NSString *)posid {
+    if (rootVC != nil) {
+        self.rootVC = rootVC;
+    }
+    
     if (self.isTheVideoPlaying == NO && self.rewardedVideoAd.isAdValid == YES) {
         self.isTheVideoPlaying = YES;
         [self.rewardedVideoAd showAdFromRootViewController:rootVC];
@@ -209,14 +218,54 @@
 - (void)stopCurrentVideoWithPosid:(NSString *)posid {
     self.needShow = NO;
     if (self.rewardedVideoAd.isAdValid) {
-        UIViewController *topVC = [self topVC];
-        [topVC dismissViewControllerAnimated:YES completion:nil];
-//        self.rewardedVideoAd = nil;
+        if (self.rootVC) {
+            [self.rootVC dismissViewControllerAnimated:YES completion:nil];
+        }
     }
 }
 
 - (BOOL)hasRewardedVideoAvailableWithPosid:(NSString *)posid {
     return self.rewardedVideoAd.isAdValid;
+}
+
+// MARK: - 全屏视频广告
+/// 加载全屏视频
+- (BOOL)loadFullscreenWithPosid:(NSString *)posid {
+    self.needShow = YES;
+    self.posid = posid;
+    
+    self.fullscreenVideoAd = [[BUNativeExpressFullscreenVideoAd alloc] initWithSlotID:posid];
+    self.fullscreenVideoAd.delegate = self;
+    [self.fullscreenVideoAd loadAdData];
+    
+    return YES;
+}
+
+/// 展示全屏视频
+- (void)showFullscreenVideoFromViewController:(UIViewController *)rootVC posid:(NSString *)posid {
+    if (rootVC != nil) {
+        self.rootVC = rootVC;
+    }
+    
+    if (self.isTheVideoPlaying == NO && self.fullscreenVideoAd.isAdValid == YES) {
+        self.isTheVideoPlaying = YES;
+        [self.fullscreenVideoAd showAdFromRootViewController:rootVC];
+    }
+}
+
+/// 关闭当前视频
+- (void)stopFullscreenVideoWithPosid:(NSString *)posid {
+    self.needShow = NO;
+    if (self.fullscreenVideoAd.isAdValid) {
+        if (self.rootVC) {
+            [self.rootVC dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+}
+
+/// 全屏视频是否有效
+- (BOOL)hasFullscreenVideoAvailableWithPosid:(NSString *)posid {
+    return self.fullscreenVideoAd.adValid;
 }
 
 // MARK: - 插屏广告
@@ -236,6 +285,10 @@
 }
 
 - (void)showInterstitialFromViewController:(UIViewController *)rootVC posid:(NSString *)posid {
+    if (rootVC != nil) {
+        self.rootVC = rootVC;
+    }
+    
     if (self.interstitialAd.isAdValid) {
         [self.interstitialAd showAdFromRootViewController:rootVC];
     }
@@ -243,6 +296,11 @@
 
 - (void)stopInterstitialWithPosid:(NSString *)posid {
     self.needShow = NO;
+    if (self.interstitialAd.isAdValid) {
+        if (self.rootVC) {
+            [self.rootVC dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
 }
 
 - (BOOL)hasInterstitialAvailableWithPosid:(NSString *)posid {
@@ -439,11 +497,10 @@
 
 - (void)nativeExpressRewardedVideoAd:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
     DLog(@"%s",__func__);
-    if (self.needShow) {
-        self.isTheVideoPlaying = NO;
-        if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
-            [self.videoDelegate adapter:self videoShowFailure:error];
-        }
+    self.rootVC = nil;
+    self.isTheVideoPlaying = NO;
+    if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+        [self.videoDelegate adapter:self videoShowFailure:error];
     }
     
     // 上报日志
@@ -522,6 +579,7 @@
 
 - (void)nativeExpressRewardedVideoAdDidClose:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
     DLog(@"%s",__func__);
+    self.rootVC = nil;
 }
 
 - (void)nativeExpressRewardedVideoAdDidClick:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
@@ -553,7 +611,7 @@
     if (error) {
         DLog(@"视频播放失败");
         self.isTheVideoPlaying = NO;
-        if (self.needShow && self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+        if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
             [self.videoDelegate adapter:self videoShowFailure:error];
         }
         
@@ -597,6 +655,218 @@
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
+}
+
+// MARK: - BUNativeExpressFullscreenVideoAdDelegate
+/**
+ This method is called when video ad material loaded successfully.
+ */
+- (void)nativeExpressFullscreenVideoAdDidLoad:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd {
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoLoadSuccess:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoLoadSuccess:self];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Load;
+    model.st_t = AdLogAdType_FullVideo;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+
+/**
+ This method is called when video ad materia failed to load.
+ @param error : the reason of error
+ */
+- (void)nativeExpressFullscreenVideoAd:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd didFailWithError:(NSError *_Nullable)error {
+    self.rootVC = nil;
+    self.isTheVideoPlaying = NO;
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+        [self.fullscreenDelegate adapter:self fullscreenShowFailure:error];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Fault;
+    model.st_t = AdLogAdType_FullVideo;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.type = AdLogFaultType_Normal;
+    model.code = error.code;
+    if (error.localizedDescription != nil || error.localizedDescription.length > 0) {
+        model.msg = error.localizedDescription;
+    }
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+
+/**
+ This method is called when rendering a nativeExpressAdView successed.
+ */
+- (void)nativeExpressFullscreenVideoAdViewRenderSuccess:(BUNativeExpressFullscreenVideoAd *)rewardedVideoAd {
+}
+
+/**
+ This method is called when a nativeExpressAdView failed to render.
+ @param error : the reason of error
+ */
+- (void)nativeExpressFullscreenVideoAdViewRenderFail:(BUNativeExpressFullscreenVideoAd *)rewardedVideoAd error:(NSError *_Nullable)error {
+    self.rootVC = nil;
+    self.isTheVideoPlaying = NO;
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+        [self.fullscreenDelegate adapter:self fullscreenShowFailure:error];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Fault;
+    model.st_t = AdLogAdType_RewardVideo;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.type = AdLogFaultType_Render;
+    model.code = error.code;
+    if (error.localizedDescription != nil || error.localizedDescription.length > 0) {
+        model.msg = error.localizedDescription;
+    }
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+
+/**
+ This method is called when video cached successfully.
+ */
+- (void)nativeExpressFullscreenVideoAdDidDownLoadVideo:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd {
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoDidDownload:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoDidDownload:self];
+    }
+}
+
+/**
+ This method is called when video ad slot will be showing.
+ */
+- (void)nativeExpressFullscreenVideoAdWillVisible:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd {
+    self.isTheVideoPlaying = YES;
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoShowSuccess:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoShowSuccess:self];
+    }
+}
+
+/**
+ This method is called when video ad slot has been shown.
+ */
+- (void)nativeExpressFullscreenVideoAdDidVisible:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd {
+    
+}
+
+/**
+ This method is called when video ad is clicked.
+ */
+- (void)nativeExpressFullscreenVideoAdDidClick:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd {
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoClicked:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoClicked:self];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Click;
+    model.st_t = AdLogAdType_FullVideo;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+
+/**
+ This method is called when the user clicked skip button.
+ */
+- (void)nativeExpressFullscreenVideoAdDidClickSkip:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd {
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoSkip:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoSkip:self];
+    }
+}
+
+/**
+ This method is called when video ad is about to close.
+ */
+- (void)nativeExpressFullscreenVideoAdWillClose:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd {
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoClose:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoClose:self];
+    }
+    self.isTheVideoPlaying = NO;
+    
+    self.needShow = NO;
+    [self.fullscreenVideoAd loadAdData];
+}
+
+/**
+ This method is called when video ad is closed.
+ */
+- (void)nativeExpressFullscreenVideoAdDidClose:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd {
+    self.rootVC = nil;
+}
+
+/**
+ This method is called when video ad play completed or an error occurred.
+ @param error : the reason of error
+ */
+- (void)nativeExpressFullscreenVideoAdDidPlayFinish:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd didFailWithError:(NSError *_Nullable)error {
+    if (error) {
+        DLog(@"视频播放失败");
+        self.isTheVideoPlaying = NO;
+        if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:fullscreenShowFailure:)]) {
+            [self.fullscreenDelegate adapter:self fullscreenShowFailure:error];
+        }
+        
+        // 上报日志
+        MEAdLogModel *model = [MEAdLogModel new];
+        model.event = AdLogEventType_Fault;
+        model.st_t = AdLogAdType_FullVideo;
+        model.so_t = self.sortType;
+        model.posid = self.sceneId;
+        model.network = self.networkName;
+        model.type = AdLogFaultType_Render;
+        model.code = error.code;
+        if (error.localizedDescription != nil || error.localizedDescription.length > 0) {
+            model.msg = error.localizedDescription;
+        }
+        model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+        // 先保存到数据库
+        [MEAdLogModel saveLogModelToRealm:model];
+        // 立即上传
+        [MEAdLogModel uploadImmediately];
+        
+    } else {
+        DLog(@"视频播放完毕");
+        if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoFinishPlay:)]) {
+            [self.fullscreenDelegate adapterFullscreenVideoFinishPlay:self];
+        }
+    }
+}
+
+/**
+ This method is called when another controller has been closed.
+ @param interactionType : open appstore in app or open the webpage or view video ad details page.
+ */
+- (void)nativeExpressFullscreenVideoAdDidCloseOtherController:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd interactionType:(BUInteractionType)interactionType {
+    
 }
 
 // MARK: - BUSplashAdDelegate
@@ -720,6 +990,8 @@
 }
 
 - (void)nativeExpresInterstitialAd:(BUNativeExpressInterstitialAd *)interstitialAd didFailWithError:(NSError *)error {
+    self.rootVC = nil;
+    
     if (self.needShow) {
         if (self.interstitialDelegate && [self.interstitialDelegate respondsToSelector:@selector(adapter:interstitialLoadFailure:)]) {
             [self.interstitialDelegate adapter:self interstitialLoadFailure:error];
@@ -811,6 +1083,7 @@
 
 - (void)nativeExpresInterstitialAdDidClose:(BUNativeExpressInterstitialAd *)interstitialAd {
     DLog(@"%s",__func__);
+    self.rootVC = nil;
     if (self.interstitialDelegate && [self.interstitialDelegate respondsToSelector:@selector(adapterInterstitialCloseFinished:)]) {
         [self.interstitialDelegate adapterInterstitialCloseFinished:self];
     }
