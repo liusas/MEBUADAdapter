@@ -211,6 +211,12 @@
     if (self.isTheVideoPlaying == NO && self.rewardedVideoAd.isAdValid == YES) {
         self.isTheVideoPlaying = YES;
         [self.rewardedVideoAd showAdFromRootViewController:rootVC];
+        return;
+    }
+    
+    NSError *error = [NSError errorWithDomain:@"show failed" code:0 userInfo:nil];
+    if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+        [self.videoDelegate adapter:self videoShowFailure:error];
     }
 }
 
@@ -225,7 +231,6 @@
 }
 
 - (BOOL)hasRewardedVideoAvailableWithPosid:(NSString *)posid {
-    return YES;
     return self.rewardedVideoAd.isAdValid;
 }
 
