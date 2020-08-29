@@ -12,70 +12,70 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2F99FB1E208DD6D036D4A267380468BF /* PBXContainerItemProxy */ = {
+		11920C1909CCC35B6925D18BE6AA1B3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0C0E9DFCAC2A661FDE25614033DEF7A6 /* Bytedance-UnionAD.xcodeproj */;
+			containerPortal = A542D7B0C818809C60FB8CACF6BE289E /* Reachability.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 5332E9233532B4756DF3841BFF2A4D94;
-			remoteInfo = "Bytedance-UnionAD";
+			remoteGlobalIDString = DA1EBD7850A215E94DBD19A247725F9F;
+			remoteInfo = Reachability;
 		};
-		3A0AA8C91E414BC218A8EB9013DBA0D3 /* PBXContainerItemProxy */ = {
+		5DE6944A1DCD188BCB656E8B3102ADF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			containerPortal = 9520957310D34798553BB95442F566CD /* MEAdvSDK.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9DA0CC6CF5E8304639A50A9FE5A743BD;
-			remoteInfo = "Pods-MEBUADAdapter_Example";
+			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
+			remoteInfo = MEAdvSDK;
 		};
-		530FA79CEA3348ED67D641588076E8EB /* PBXContainerItemProxy */ = {
+		6AE3EDCCE6DDA29E94B1831A0831CFA0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AD9727EC4D3260E78C16833B44E178D4 /* MEBUADAdapter.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = B15F76109BA310E5F33DFF6121526034;
 			remoteInfo = MEBUADAdapter;
 		};
-		AF759FF465F3EAEAD1D2BF400CA69923 /* PBXContainerItemProxy */ = {
+		A99BD3B1B10135F2B264478555357C73 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DA9E73A4B350A7F917FA4F2C8D332C92 /* Realm.xcodeproj */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DA0CC6CF5E8304639A50A9FE5A743BD;
+			remoteInfo = "Pods-MEBUADAdapter_Example";
+		};
+		C5CFB767AE4E249ABAAC5E00E8881BD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A84DAF67DBD0B052CA743F57C624BE35 /* Realm.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC4AC9FBD7453D9D72102559C8F6B8AC;
 			remoteInfo = Realm;
 		};
-		E32D242BA99768F8B052F2683D5C8744 /* PBXContainerItemProxy */ = {
+		EEEC73628A07D7FC62B8FECC71C7F0F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AA01DA809C59CE072707D0B3D5105E40 /* MEAdvSDK.xcodeproj */;
+			containerPortal = 6F8AFD5BE32622AAF022DB0DA8D54428 /* Bytedance-UnionAD.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
-			remoteInfo = MEAdvSDK;
-		};
-		F1BA9665015428E6FE33CA20441C0D1A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55078CFC43A7E3B51F803DA3A7E01271 /* Reachability.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DA1EBD7850A215E94DBD19A247725F9F;
-			remoteInfo = Reachability;
+			remoteGlobalIDString = 5332E9233532B4756DF3841BFF2A4D94;
+			remoteInfo = "Bytedance-UnionAD";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C0E9DFCAC2A661FDE25614033DEF7A6 /* Bytedance-UnionAD */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Bytedance-UnionAD"; path = "Bytedance-UnionAD.xcodeproj"; sourceTree = "<group>"; };
 		2EF9FA16A720ADB2D41273057AD94FC9 /* Pods-MEBUADAdapter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MEBUADAdapter_Example-dummy.m"; sourceTree = "<group>"; };
 		4E9631BBC67314BDA6C419DB633AB07A /* Pods-MEBUADAdapter_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MEBUADAdapter_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		55078CFC43A7E3B51F803DA3A7E01271 /* Reachability */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Reachability; path = Reachability.xcodeproj; sourceTree = "<group>"; };
 		608EB13FA1BD31E10452D27828A88416 /* libPods-MEBUADAdapter_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MEBUADAdapter_Example.a"; path = "libPods-MEBUADAdapter_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BE729E40F221A8EFBB68C799CE7B12 /* Pods-MEBUADAdapter_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MEBUADAdapter_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		69FABFDB950A168403C84D29D4F565AA /* Pods-MEBUADAdapter_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MEBUADAdapter_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		6E21D3B4B41690A2E9472422565E92AE /* Pods-MEBUADAdapter_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MEBUADAdapter_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6F8AFD5BE32622AAF022DB0DA8D54428 /* Bytedance-UnionAD */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Bytedance-UnionAD"; path = "Bytedance-UnionAD.xcodeproj"; sourceTree = "<group>"; };
 		702D0E4AFEAD7CCA9EA22BB81E45A081 /* Pods-MEBUADAdapter_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MEBUADAdapter_Tests-dummy.m"; sourceTree = "<group>"; };
 		7F5D4812D325067B655B2726AF5643BB /* Pods-MEBUADAdapter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MEBUADAdapter_Example.release.xcconfig"; sourceTree = "<group>"; };
 		94CAF2F7D724E59F6AA464ED8F6CE769 /* Pods-MEBUADAdapter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MEBUADAdapter_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		9520957310D34798553BB95442F566CD /* MEAdvSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEAdvSDK; path = MEAdvSDK.xcodeproj; sourceTree = "<group>"; };
 		972D9A24C544B42871A74160AF633539 /* Pods-MEBUADAdapter_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MEBUADAdapter_Example-resources.sh"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AA01DA809C59CE072707D0B3D5105E40 /* MEAdvSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEAdvSDK; path = MEAdvSDK.xcodeproj; sourceTree = "<group>"; };
+		A542D7B0C818809C60FB8CACF6BE289E /* Reachability */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Reachability; path = Reachability.xcodeproj; sourceTree = "<group>"; };
+		A84DAF67DBD0B052CA743F57C624BE35 /* Realm */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Realm; path = Realm.xcodeproj; sourceTree = "<group>"; };
 		AD9727EC4D3260E78C16833B44E178D4 /* MEBUADAdapter */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEBUADAdapter; path = MEBUADAdapter.xcodeproj; sourceTree = "<group>"; };
 		B4145A23CBBA6F4EDC780C3742343B3C /* Pods-MEBUADAdapter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MEBUADAdapter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9BCC64FC0BD8E47B9349D063483A1D0 /* libPods-MEBUADAdapter_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MEBUADAdapter_Tests.a"; path = "libPods-MEBUADAdapter_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCB6AFC0711B3954BA425D8DD67C4C2 /* Pods-MEBUADAdapter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MEBUADAdapter_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DA9E73A4B350A7F917FA4F2C8D332C92 /* Realm */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Realm; path = Realm.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,17 +96,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		329BF2910388F5A302C3CA7C74268FE5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0C0E9DFCAC2A661FDE25614033DEF7A6 /* Bytedance-UnionAD */,
-				AA01DA809C59CE072707D0B3D5105E40 /* MEAdvSDK */,
-				55078CFC43A7E3B51F803DA3A7E01271 /* Reachability */,
-				DA9E73A4B350A7F917FA4F2C8D332C92 /* Realm */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		6DD4C7E725AC78D481052CD20B4C84C4 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +126,17 @@
 			path = "Target Support Files/Pods-MEBUADAdapter_Tests";
 			sourceTree = "<group>";
 		};
+		8808CCD17FB138FE984ED08106BD0317 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F8AFD5BE32622AAF022DB0DA8D54428 /* Bytedance-UnionAD */,
+				9520957310D34798553BB95442F566CD /* MEAdvSDK */,
+				A542D7B0C818809C60FB8CACF6BE289E /* Reachability */,
+				A84DAF67DBD0B052CA743F57C624BE35 /* Realm */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A7F27F400050A274BBAA77CE7896324A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +152,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				6DD4C7E725AC78D481052CD20B4C84C4 /* Development Pods */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				329BF2910388F5A302C3CA7C74268FE5 /* Pods */,
+				8808CCD17FB138FE984ED08106BD0317 /* Pods */,
 				74F2D43B920CD6631C8708869E5ED87D /* Products */,
 				A7F27F400050A274BBAA77CE7896324A /* Targets Support Files */,
 			);
@@ -210,7 +210,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				FFD839733FE1E45D655EFA5651917946 /* PBXTargetDependency */,
+				B3851D059A49BA354F3B125E963E16C9 /* PBXTargetDependency */,
 			);
 			name = "Pods-MEBUADAdapter_Tests";
 			productName = "Pods-MEBUADAdapter_Tests";
@@ -228,11 +228,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				8C2EF35D2E0296E110FE94073518AEF9 /* PBXTargetDependency */,
-				316FE84BB5FC26B675B0E7A3ECBECEE7 /* PBXTargetDependency */,
-				3852C59C0B3F30A4AF26FBFCAEF6F8FE /* PBXTargetDependency */,
-				5B3F3E77588E1DC8F20DAE84C8C7D77B /* PBXTargetDependency */,
-				707983B9E7FACC1A7CA190BBCC0332B7 /* PBXTargetDependency */,
+				9372AF72CCC3F846056A2650D7C9DFAB /* PBXTargetDependency */,
+				7A1CBBAA68AF276B72933CF95AD2B60C /* PBXTargetDependency */,
+				B5DD4ED3698189E051554494B68B0365 /* PBXTargetDependency */,
+				FD412DC297336611101BA21430BBD0F5 /* PBXTargetDependency */,
+				FDF1ED5A0001313F73A0EC15F267E80A /* PBXTargetDependency */,
 			);
 			name = "Pods-MEBUADAdapter_Example";
 			productName = "Pods-MEBUADAdapter_Example";
@@ -261,19 +261,19 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 0C0E9DFCAC2A661FDE25614033DEF7A6 /* Bytedance-UnionAD */;
+					ProjectRef = 9520957310D34798553BB95442F566CD /* MEAdvSDK */;
 				},
 				{
-					ProjectRef = AA01DA809C59CE072707D0B3D5105E40 /* MEAdvSDK */;
+					ProjectRef = A542D7B0C818809C60FB8CACF6BE289E /* Reachability */;
+				},
+				{
+					ProjectRef = A84DAF67DBD0B052CA743F57C624BE35 /* Realm */;
 				},
 				{
 					ProjectRef = AD9727EC4D3260E78C16833B44E178D4 /* MEBUADAdapter */;
 				},
 				{
-					ProjectRef = 55078CFC43A7E3B51F803DA3A7E01271 /* Reachability */;
-				},
-				{
-					ProjectRef = DA9E73A4B350A7F917FA4F2C8D332C92 /* Realm */;
+					ProjectRef = 6F8AFD5BE32622AAF022DB0DA8D54428 /* Bytedance-UnionAD */;
 				},
 			);
 			projectRoot = "";
@@ -304,36 +304,36 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		316FE84BB5FC26B675B0E7A3ECBECEE7 /* PBXTargetDependency */ = {
+		7A1CBBAA68AF276B72933CF95AD2B60C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MEAdvSDK;
-			targetProxy = E32D242BA99768F8B052F2683D5C8744 /* PBXContainerItemProxy */;
+			targetProxy = 5DE6944A1DCD188BCB656E8B3102ADF4 /* PBXContainerItemProxy */;
 		};
-		3852C59C0B3F30A4AF26FBFCAEF6F8FE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MEBUADAdapter;
-			targetProxy = 530FA79CEA3348ED67D641588076E8EB /* PBXContainerItemProxy */;
-		};
-		5B3F3E77588E1DC8F20DAE84C8C7D77B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Reachability;
-			targetProxy = F1BA9665015428E6FE33CA20441C0D1A /* PBXContainerItemProxy */;
-		};
-		707983B9E7FACC1A7CA190BBCC0332B7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Realm;
-			targetProxy = AF759FF465F3EAEAD1D2BF400CA69923 /* PBXContainerItemProxy */;
-		};
-		8C2EF35D2E0296E110FE94073518AEF9 /* PBXTargetDependency */ = {
+		9372AF72CCC3F846056A2650D7C9DFAB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Bytedance-UnionAD";
-			targetProxy = 2F99FB1E208DD6D036D4A267380468BF /* PBXContainerItemProxy */;
+			targetProxy = EEEC73628A07D7FC62B8FECC71C7F0F9 /* PBXContainerItemProxy */;
 		};
-		FFD839733FE1E45D655EFA5651917946 /* PBXTargetDependency */ = {
+		B3851D059A49BA354F3B125E963E16C9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MEBUADAdapter_Example";
 			target = 9DA0CC6CF5E8304639A50A9FE5A743BD /* Pods-MEBUADAdapter_Example */;
-			targetProxy = 3A0AA8C91E414BC218A8EB9013DBA0D3 /* PBXContainerItemProxy */;
+			targetProxy = A99BD3B1B10135F2B264478555357C73 /* PBXContainerItemProxy */;
+		};
+		B5DD4ED3698189E051554494B68B0365 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MEBUADAdapter;
+			targetProxy = 6AE3EDCCE6DDA29E94B1831A0831CFA0 /* PBXContainerItemProxy */;
+		};
+		FD412DC297336611101BA21430BBD0F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Reachability;
+			targetProxy = 11920C1909CCC35B6925D18BE6AA1B3A /* PBXContainerItemProxy */;
+		};
+		FDF1ED5A0001313F73A0EC15F267E80A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Realm;
+			targetProxy = C5CFB767AE4E249ABAAC5E00E8881BD6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

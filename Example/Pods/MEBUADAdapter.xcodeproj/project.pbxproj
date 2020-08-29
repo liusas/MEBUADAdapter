@@ -13,14 +13,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		58677CA876CA9DDB4147A01BE11901DA /* PBXContainerItemProxy */ = {
+		78FADD03A8FA3CA16E1FA880E71B2145 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
 			remoteInfo = MEAdvSDK;
 		};
-		8A1AAC615C83C3151936D944BE494649 /* PBXContainerItemProxy */ = {
+		DFD7072DFFF35377F8BFEFB767872F38 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD.xcodeproj */;
 			proxyType = 1;
@@ -148,8 +148,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				BD69EECFF362B58B3CE41C83CFA2D34B /* PBXTargetDependency */,
-				BCD24570A630C8576FA8064E5B1D66BF /* PBXTargetDependency */,
+				C3FFA2C30365F94C71E4DEAD5183229C /* PBXTargetDependency */,
+				5DC55C49CFFC71EA32183CC0C05DE949 /* PBXTargetDependency */,
 			);
 			name = MEBUADAdapter;
 			productName = MEBUADAdapter;
@@ -204,15 +204,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BCD24570A630C8576FA8064E5B1D66BF /* PBXTargetDependency */ = {
+		5DC55C49CFFC71EA32183CC0C05DE949 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MEAdvSDK;
-			targetProxy = 58677CA876CA9DDB4147A01BE11901DA /* PBXContainerItemProxy */;
+			targetProxy = 78FADD03A8FA3CA16E1FA880E71B2145 /* PBXContainerItemProxy */;
 		};
-		BD69EECFF362B58B3CE41C83CFA2D34B /* PBXTargetDependency */ = {
+		C3FFA2C30365F94C71E4DEAD5183229C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Bytedance-UnionAD";
-			targetProxy = 8A1AAC615C83C3151936D944BE494649 /* PBXContainerItemProxy */;
+			targetProxy = DFD7072DFFF35377F8BFEFB767872F38 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

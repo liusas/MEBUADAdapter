@@ -1,11 +1,11 @@
 PODS:
   - Bytedance-UnionAD (2.9.5.8)
-  - MEAdvSDK (0.1.7):
+  - MEAdvSDK (1.0.1):
     - Reachability
-    - Realm (= 4.4.1)
-  - MEBUADAdapter (0.1.1):
+    - Realm (~> 4.4.1)
+  - MEBUADAdapter (1.0.1):
     - Bytedance-UnionAD (= 2.9.5.8)
-    - MEAdvSDK (~> 0.1.4)
+    - MEAdvSDK (~> 1.0.1)
   - Reachability (3.2)
   - Realm (4.4.1):
     - Realm/Headers (= 4.4.1)
@@ -27,8 +27,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Bytedance-UnionAD: af6f65144b4fce6329946e89f262ffc8c6c1937c
-  MEAdvSDK: c53edafca810b70148b43298fc3cbed507312f0e
-  MEBUADAdapter: b64ceb949bfc3641c11b177d471fa54c9d7f4240
+  MEAdvSDK: c29b70b357e16a130bb31e26c680788765d4bb6f
+  MEBUADAdapter: 45588d54fc0eda07f59e1f4693ce23be51307445
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
 

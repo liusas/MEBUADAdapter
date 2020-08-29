@@ -225,6 +225,7 @@
 }
 
 - (BOOL)hasRewardedVideoAvailableWithPosid:(NSString *)posid {
+    return YES;
     return self.rewardedVideoAd.isAdValid;
 }
 
@@ -523,13 +524,16 @@
 }
 
 - (void)nativeExpressRewardedVideoAdDidDownLoadVideo:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
-    if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoDidDownload:)]) {
-        [self.videoDelegate adapterVideoDidDownload:self];
-    }
+//    if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoDidDownload:)]) {
+//        [self.videoDelegate adapterVideoDidDownload:self];
+//    }
 }
 
 - (void)nativeExpressRewardedVideoAdViewRenderSuccess:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
     DLog(@"%s",__func__);
+    if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoDidDownload:)]) {
+        [self.videoDelegate adapterVideoDidDownload:self];
+    }
 }
 
 - (void)nativeExpressRewardedVideoAdViewRenderFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd error:(NSError *_Nullable)error {

@@ -1,18 +1,18 @@
 //
-//  MERewardedVideoManager.m
+//  MEFullscreenManager.m
 //  MEAdvSDK
 //
-//  Created by 刘峰 on 2019/11/8.
+//  Created by 刘峰 on 2020/8/24.
 //
 
-#import "MERewardedVideoManager.h"
+#import "MEFullscreenManager.h"
 #import "MEConfigManager.h"
 #import "MEAdLogModel.h"
 #import "MEAdNetworkManager.h"
 #import "StrategyFactory.h"
 #import "MEBaseAdapter.h"
 
-@interface MERewardedVideoManager ()<MEBaseAdapterVideoProtocol>
+@interface MEFullscreenManager ()<MEBaseAdapterFullscreenVideoProtocol>
 
 @property (nonatomic, strong) MEConfigManager *configManger;
 /// sceneId:adapter,记录当前展示广告的adapter
@@ -20,8 +20,8 @@
 /// 此次信息流管理类分配到的广告平台模型数组,保证一次信息流广告有一个广告平台成功展示
 @property (nonatomic, strong) NSMutableArray <StrategyResultModel *>*assignResultArr;
 
-@property (nonatomic, copy) LoadRewardVideoFinish finished;
-@property (nonatomic, copy) LoadRewardVideoFailed failed;
+@property (nonatomic, copy) LoadFullscreenVideoFinish finished;
+@property (nonatomic, copy) FullscreenVideoFailed failed;
 
 @property (nonatomic, assign) NSInteger requestCount;
 
@@ -33,13 +33,13 @@
 
 @end
 
-@implementation MERewardedVideoManager
+@implementation MEFullscreenManager
 
 + (instancetype)shareInstance {
-    static MERewardedVideoManager *videoManager = nil;
+    static MEFullscreenManager *videoManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        videoManager = [[MERewardedVideoManager alloc] init];
+        videoManager = [[MEFullscreenManager alloc] init];
     });
     return videoManager;
 }
@@ -56,16 +56,16 @@
 }
 
 /// 加载激励视频
-- (void)loadRewardedVideoWithSceneId:(NSString *)sceneId
-                            finished:(LoadRewardVideoFinish)finished
-                              failed:(LoadRewardVideoFailed)failed {
+- (void)loadFullscreenVideoWithSceneId:(NSString *)sceneId
+                            finished:(LoadFullscreenVideoFinish)finished
+                                failed:(FullscreenVideoFailed)failed {
     self.finished = finished;
     self.failed = failed;
     
     _requestCount = 0;
     
     // 分配广告平台
-    if (![self assignAdPlatformAndShowLogic1WithSceneId:sceneId platform:MEAdAgentTypeNone]) {
+    if (![self assignAdPlatformWithSceneId:sceneId platform:MEAdAgentTypeNone]) {
         NSError *error = [NSError errorWithDomain:@"adv assign failed" code:0 userInfo:@{NSLocalizedDescriptionKey: @"分配失败"}];
         failed(error);
         return;
@@ -80,8 +80,8 @@
 }
 
 /// 展示激励视频
-- (void)showRewardedVideoFromViewController:(UIViewController *)rootVC
-                                    sceneId:(NSString *)sceneId {
+- (void)showFullscreenVideoFromViewController:(UIViewController *)rootVC
+                                      sceneId:(NSString *)sceneId {
     if (sceneId == nil) {
         NSError *error = [NSError errorWithDomain:@"sceneId can not be nil" code:0 userInfo:@{NSLocalizedDescriptionKey: @"视频弹出失败"}];
         self.failed(error);
@@ -98,7 +98,7 @@
             }
             
             // 展示视频
-            [adapter showRewardedVideoFromViewController:rootVC posid:posid];
+            [adapter showFullscreenVideoFromViewController:rootVC posid:posid];
             return;
         }
         
@@ -110,13 +110,13 @@
 }
 
 /// 关闭当前视频
-- (void)stopCurrentVideoWithSceneId:(NSString *)sceneId {
+- (void)stopFullscreenVideoWithSceneId:(NSString *)sceneId {
     for (NSString *posid in self.currentAdapters.allKeys) {
         id <MEBaseAdapterProtocol>adapter = self.currentAdapters[posid];
         
         if (adapter) {
             // 展示视频
-            [adapter stopCurrentVideoWithPosid:posid];
+            [adapter stopFullscreenVideoWithPosid:posid];
             return;
         }
         
@@ -126,13 +126,13 @@
         break;
     }
 }
-
-- (BOOL)hasRewardedVideoAvailableWithSceneId:(NSString *)sceneId {
+/// 是否有有效的全屏视频
+- (BOOL)hasFullscreenVideoAvailableWithSceneId:(NSString *)sceneId {
     for (NSString *posid in self.currentAdapters.allKeys) {
         id <MEBaseAdapterProtocol>adapter = self.currentAdapters[posid];
         
         if (adapter) {
-            return [adapter hasRewardedVideoAvailableWithPosid:posid];
+            return [adapter hasFullscreenVideoAvailableWithPosid:posid];
         }
         break;
     }
@@ -140,8 +140,8 @@
     return NO;
 }
 
-// MARK: - MEBaseAdapterVideoProtocol
-- (void)adapterVideoLoadSuccess:(MEBaseAdapter *)adapter {
+// MARK: - MEBaseAdapterFullscreenVideoProtocol
+- (void)adapterFullscreenVideoLoadSuccess:(MEBaseAdapter *)adapter {
     if (self.hasSuccessfullyLoaded) {
         return;
     }
@@ -165,14 +165,13 @@
     }
 }
 
-- (void)adapterVideoDidDownload:(MEBaseAdapter *)adapter {
+- (void)adapterFullscreenVideoDidDownload:(MEBaseAdapter *)adapter {
     if (self.didDownloadBlock) {
         self.didDownloadBlock();
     }
 }
 
-/// 展现video成功
-- (void)adapterVideoShowSuccess:(MEBaseAdapter *)adapter {
+- (void)adapterFullscreenVideoShowSuccess:(MEBaseAdapter *)adapter {
     // 控制广告平台展示频次
     [StrategyFactory changeAdFrequencyWithSceneId:adapter.sceneId];
     
@@ -181,8 +180,7 @@
     }
 }
 
-/// 展现video失败
-- (void)adapter:(MEBaseAdapter *)adapter videoShowFailure:(NSError *)error {
+- (void)adapter:(MEBaseAdapter *)adapter fullscreenShowFailure:(NSError *)error {
     // 从数组中移除不需要处理的adapter
     [self removeAssignResultArrObjectWithAdapter:adapter];
     
@@ -197,7 +195,7 @@
     // 适用于串行,每次只拉取一个广告的情况,并行大于等于 2 个就不符合以下条件了
     if (_requestCount < 2 && self.assignResultArr.count == 0 && !self.needToStop) {
         // 选择广告位对应的广告平台数组里面的下一个广告平台
-        [self assignAdPlatformAndShowLogic1WithSceneId:adapter.sceneId platform:[self.configManger nextAdPlatformWithSceneId:adapter.sceneId currentPlatform:adapter.platformType]];
+        [self assignAdPlatformWithSceneId:adapter.sceneId platform:[self.configManger nextAdPlatformWithSceneId:adapter.sceneId currentPlatform:adapter.platformType]];
         return;
     }
     
@@ -210,22 +208,13 @@
     }
 }
 
-/// 视频广告播放完毕
-- (void)adapterVideoFinishPlay:(MEBaseAdapter *)adapter {
-    if (self.finishPlayBlock) {
-        self.finishPlayBlock();
-    }
-}
-
-/// video被点击
-- (void)adapterVideoClicked:(MEBaseAdapter *)adapter {
+- (void)adapterFullscreenVideoClicked:(MEBaseAdapter *)adapter {
     if (self.clickBlock) {
         self.clickBlock();
     }
 }
 
-/// video关闭事件
-- (void)adapterVideoClose:(MEBaseAdapter *)adapter {
+- (void)adapterFullscreenVideoClose:(MEBaseAdapter *)adapter {
     self.hasSuccessfullyLoaded = NO;
     self.needToStop = NO;
     
@@ -234,8 +223,22 @@
     }
 }
 
+- (void)adapterFullscreenVideoFinishPlay:(MEBaseAdapter *)adapter {
+    if (self.finishPlayBlock) {
+        self.finishPlayBlock();
+    }
+}
+
+- (void)adapterFullscreenVideoSkip:(MEBaseAdapter *)adapter {
+    self.hasSuccessfullyLoaded = NO;
+    self.needToStop = NO;
+    if (self.skipBlock) {
+        self.skipBlock();
+    }
+}
+
 // MARK: 按广告位posid选择广告的逻辑,此次采用
-- (BOOL)assignAdPlatformAndShowLogic1WithSceneId:(NSString *)sceneId platform:(MEAdAgentType)targetPlatform {
+- (BOOL)assignAdPlatformWithSceneId:(NSString *)sceneId platform:(MEAdAgentType)targetPlatform {
     NSArray <StrategyResultModel *>*resultArr = [[StrategyFactory sharedInstance] getPosidBySortTypeWithPlatform:targetPlatform SceneId:sceneId];
     
     if (resultArr == nil || resultArr.count == 0) {
@@ -262,15 +265,15 @@
             }
             
             // 找到下一个广告平台则指定出这个平台的广告
-            return [self assignAdPlatformAndShowLogic1WithSceneId:sceneId platform:nextPlatform];
+            return [self assignAdPlatformWithSceneId:sceneId platform:nextPlatform];
         }
         
-        adapter.videoDelegate = self;
+        adapter.fullscreenDelegate = self;
         // 场景id
         adapter.sceneId = sceneId;
         adapter.isGetForCache = NO;
         adapter.sortType = [[MEConfigManager sharedInstance] getSortTypeFromSceneId:model.sceneId];
-        [adapter loadRewardVideoWithPosid:model.posid];
+        [adapter loadFullscreenWithPosid:model.posid];
         // 请求日志上报
         [self trackRequestWithSortType:adapter.sortType sceneId:sceneId platformType:model.platformType];
     }
@@ -286,7 +289,7 @@
     // 发送请求数据上报
     MEAdLogModel *log = [MEAdLogModel new];
     log.event = AdLogEventType_Request;
-    log.st_t = AdLogAdType_RewardVideo;
+    log.st_t = AdLogAdType_FullVideo;
     log.so_t = sortType;
     log.posid = sceneId;
     log.network = [MEAdNetworkManager getNetworkNameFromAgentType:platformType];
@@ -299,7 +302,7 @@
 
 /// 请求超时
 - (void)requestTimeout {
-    NSError *error = [NSError errorWithDomain:@"sceneId can not be nil" code:0 userInfo:@{NSLocalizedDescriptionKey: @"视频弹出失败"}];
+    NSError *error = [NSError errorWithDomain:@"fullscreen video request time out" code:0 userInfo:@{NSLocalizedDescriptionKey: @"视频弹出失败"}];
     self.failed(error);
     [self stopAdapterAndRemoveFromAssignResultArr];
 }
@@ -310,8 +313,8 @@
     // 停止其他adapter
     for (StrategyResultModel *model in self.assignResultArr) {
         id<MEBaseAdapterProtocol> adapter = [model.targetAdapterClass sharedInstance];
-        if ([adapter respondsToSelector:@selector(stopCurrentVideoWithPosid:)]) {
-            [adapter stopCurrentVideoWithPosid:model.posid];
+        if ([adapter respondsToSelector:@selector(stopFullscreenVideoWithPosid:)]) {
+            [adapter stopFullscreenVideoWithPosid:model.posid];
         }
     }
     [self.assignResultArr removeAllObjects];
