@@ -20,7 +20,7 @@
 			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
 			remoteInfo = MEAdvSDK;
 		};
-		DFD7072DFFF35377F8BFEFB767872F38 /* PBXContainerItemProxy */ = {
+		8A1AAC615C83C3151936D944BE494649 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD.xcodeproj */;
 			proxyType = 1;
@@ -148,7 +148,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C3FFA2C30365F94C71E4DEAD5183229C /* PBXTargetDependency */,
+				BD69EECFF362B58B3CE41C83CFA2D34B /* PBXTargetDependency */,
 				5DC55C49CFFC71EA32183CC0C05DE949 /* PBXTargetDependency */,
 			);
 			name = MEBUADAdapter;
@@ -209,10 +209,10 @@
 			name = MEAdvSDK;
 			targetProxy = 78FADD03A8FA3CA16E1FA880E71B2145 /* PBXContainerItemProxy */;
 		};
-		C3FFA2C30365F94C71E4DEAD5183229C /* PBXTargetDependency */ = {
+		BD69EECFF362B58B3CE41C83CFA2D34B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Bytedance-UnionAD";
-			targetProxy = DFD7072DFFF35377F8BFEFB767872F38 /* PBXContainerItemProxy */;
+			targetProxy = 8A1AAC615C83C3151936D944BE494649 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -16,16 +16,16 @@ CACHE_KEYS:
       MEAdvSDK:
         :debug: 8747ad686f58fa12abc9af4b0fa8ffe3
         :release: 8747ad686f58fa12abc9af4b0fa8ffe3
-    CHECKSUM: c29b70b357e16a130bb31e26c680788765d4bb6f
+    CHECKSUM: 3c710e03b869ee5fc780a0a9118db256a2e1e74d
     PROJECT_NAME: MEAdvSDK
     SPECS:
-      - MEAdvSDK (1.0.1)
+      - MEAdvSDK (1.0.2)
   MEBUADAdapter:
     BUILD_SETTINGS_CHECKSUM:
       MEBUADAdapter:
         :debug: c8bf0291952e148d65617b038f560cbb
         :release: c8bf0291952e148d65617b038f560cbb
-    CHECKSUM: 45588d54fc0eda07f59e1f4693ce23be51307445
+    CHECKSUM: bba530c2f8f36d2b5aed9b478465d73094f790dc
     FILES:
       - "../../LICENSE"
       - "../../MEBUADAdapter/Classes/MEBUADAdapter.h"
@@ -33,7 +33,7 @@ CACHE_KEYS:
       - "../../README.md"
     PROJECT_NAME: MEBUADAdapter
     SPECS:
-      - MEBUADAdapter (1.0.1)
+      - MEBUADAdapter (1.0.6)
   Pods-MEBUADAdapter_Example:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 2721b924bbaef9665af9320b9ecc4e17
