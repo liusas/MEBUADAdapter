@@ -209,7 +209,6 @@
     }
     
     if (self.isTheVideoPlaying == NO && self.rewardedVideoAd.isAdValid == YES) {
-        self.isTheVideoPlaying = YES;
         [self.rewardedVideoAd showAdFromRootViewController:rootVC];
         return;
     }
@@ -254,7 +253,6 @@
     }
     
     if (self.isTheVideoPlaying == NO && self.fullscreenVideoAd.isAdValid == YES) {
-        self.isTheVideoPlaying = YES;
         [self.fullscreenVideoAd showAdFromRootViewController:rootVC];
     }
 }
@@ -582,8 +580,8 @@
     }
     self.isTheVideoPlaying = NO;
     
-    self.needShow = NO;
-    [self.rewardedVideoAd loadAdData];
+//    self.needShow = NO;
+//    [self.rewardedVideoAd loadAdData];
 }
 
 - (void)nativeExpressRewardedVideoAdDidClose:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
@@ -821,8 +819,8 @@
     }
     self.isTheVideoPlaying = NO;
     
-    self.needShow = NO;
-    [self.fullscreenVideoAd loadAdData];
+//    self.needShow = NO;
+//    [self.fullscreenVideoAd loadAdData];
 }
 
 /**
