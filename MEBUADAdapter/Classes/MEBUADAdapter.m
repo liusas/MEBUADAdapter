@@ -194,11 +194,17 @@
     }
     
     self.needShow = YES;
-    BURewardedVideoModel *model = [[BURewardedVideoModel alloc] init];
-    model.userId = @"";
-    self.rewardedVideoAd = [[BUNativeExpressRewardedVideoAd alloc] initWithSlotID:posid rewardedVideoModel:model];
-    self.rewardedVideoAd.delegate = self;
-    [self.rewardedVideoAd loadAdData];
+    
+    if ([self hasRewardedVideoAvailableWithPosid:posid]) {
+        self.rewardedVideoAd.delegate = self;
+        [self.rewardedVideoAd loadAdData];
+    } else {
+        BURewardedVideoModel *model = [[BURewardedVideoModel alloc] init];
+        model.userId = @"";
+        self.rewardedVideoAd = [[BUNativeExpressRewardedVideoAd alloc] initWithSlotID:posid rewardedVideoModel:model];
+        self.rewardedVideoAd.delegate = self;
+        [self.rewardedVideoAd loadAdData];
+    }
     
     return YES;
 }
@@ -239,9 +245,14 @@
     self.needShow = YES;
     self.posid = posid;
     
-    self.fullscreenVideoAd = [[BUNativeExpressFullscreenVideoAd alloc] initWithSlotID:posid];
-    self.fullscreenVideoAd.delegate = self;
-    [self.fullscreenVideoAd loadAdData];
+    if ([self hasFullscreenVideoAvailableWithPosid:posid]) {
+        self.fullscreenVideoAd.delegate = self;
+        [self.fullscreenVideoAd loadAdData];
+    } else {
+        self.fullscreenVideoAd = [[BUNativeExpressFullscreenVideoAd alloc] initWithSlotID:posid];
+        self.fullscreenVideoAd.delegate = self;
+        [self.fullscreenVideoAd loadAdData];
+    }
     
     return YES;
 }
@@ -281,9 +292,15 @@
     }
     
     self.needShow = YES;
-    self.interstitialAd = [[BUNativeExpressInterstitialAd alloc] initWithSlotID:posid adSize:CGSizeMake(300, 300)];
-    self.interstitialAd.delegate = self;
-    [self.interstitialAd loadAdData];
+    
+    if ([self hasInterstitialAvailableWithPosid:posid]) {
+        self.interstitialAd.delegate = self;
+        [self.interstitialAd loadAdData];
+    } else {
+        self.interstitialAd = [[BUNativeExpressInterstitialAd alloc] initWithSlotID:posid adSize:CGSizeMake(300, 300)];
+        self.interstitialAd.delegate = self;
+        [self.interstitialAd loadAdData];
+    }
     
     return YES;
 }
@@ -481,7 +498,7 @@
 
 - (void)nativeExpressRewardedVideoAdDidLoad:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
     DLog(@"%s",__func__);
-    if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoLoadSuccess:)]) {
+    if (self.needShow && self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoLoadSuccess:)]) {
         [self.videoDelegate adapterVideoLoadSuccess:self];
     }
     
@@ -503,7 +520,7 @@
     DLog(@"%s",__func__);
     self.rootVC = nil;
     self.isTheVideoPlaying = NO;
-    if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+    if (self.needShow && self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
         [self.videoDelegate adapter:self videoShowFailure:error];
     }
     
@@ -534,7 +551,7 @@
 
 - (void)nativeExpressRewardedVideoAdViewRenderSuccess:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
     DLog(@"%s",__func__);
-    if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoDidDownload:)]) {
+    if (self.needShow && self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoDidDownload:)]) {
         [self.videoDelegate adapterVideoDidDownload:self];
     }
 }
@@ -580,8 +597,8 @@
     }
     self.isTheVideoPlaying = NO;
     
-//    self.needShow = NO;
-//    [self.rewardedVideoAd loadAdData];
+    self.needShow = NO;
+    [self.rewardedVideoAd loadAdData];
 }
 
 - (void)nativeExpressRewardedVideoAdDidClose:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
@@ -669,7 +686,7 @@
  This method is called when video ad material loaded successfully.
  */
 - (void)nativeExpressFullscreenVideoAdDidLoad:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd {
-    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoLoadSuccess:)]) {
+    if (self.needShow && self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoLoadSuccess:)]) {
         [self.fullscreenDelegate adapterFullscreenVideoLoadSuccess:self];
     }
     
@@ -694,7 +711,7 @@
 - (void)nativeExpressFullscreenVideoAd:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd didFailWithError:(NSError *_Nullable)error {
     self.rootVC = nil;
     self.isTheVideoPlaying = NO;
-    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+    if (self.needShow && self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
         [self.fullscreenDelegate adapter:self fullscreenShowFailure:error];
     }
     
@@ -721,6 +738,9 @@
  This method is called when rendering a nativeExpressAdView successed.
  */
 - (void)nativeExpressFullscreenVideoAdViewRenderSuccess:(BUNativeExpressFullscreenVideoAd *)rewardedVideoAd {
+    if (self.needShow && self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoDidDownload:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoDidDownload:self];
+    }
 }
 
 /**
@@ -730,7 +750,7 @@
 - (void)nativeExpressFullscreenVideoAdViewRenderFail:(BUNativeExpressFullscreenVideoAd *)rewardedVideoAd error:(NSError *_Nullable)error {
     self.rootVC = nil;
     self.isTheVideoPlaying = NO;
-    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+    if (self.needShow && self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
         [self.fullscreenDelegate adapter:self fullscreenShowFailure:error];
     }
     
@@ -757,9 +777,6 @@
  This method is called when video cached successfully.
  */
 - (void)nativeExpressFullscreenVideoAdDidDownLoadVideo:(BUNativeExpressFullscreenVideoAd *)fullscreenVideoAd {
-    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoDidDownload:)]) {
-        [self.fullscreenDelegate adapterFullscreenVideoDidDownload:self];
-    }
 }
 
 /**
@@ -819,8 +836,8 @@
     }
     self.isTheVideoPlaying = NO;
     
-//    self.needShow = NO;
-//    [self.fullscreenVideoAd loadAdData];
+    self.needShow = NO;
+    [self.fullscreenVideoAd loadAdData];
 }
 
 /**
@@ -979,7 +996,7 @@
 //MARK: - BUNativeExpresInterstitialAdDelegate
 - (void)nativeExpresInterstitialAdDidLoad:(BUNativeExpressInterstitialAd *)interstitialAd {
     DLog(@"%s",__func__);
-    if (self.interstitialDelegate && [self.interstitialDelegate respondsToSelector:@selector(adapterInterstitialLoadSuccess:)]) {
+    if (self.needShow && self.interstitialDelegate && [self.interstitialDelegate respondsToSelector:@selector(adapterInterstitialLoadSuccess:)]) {
         [self.interstitialDelegate adapterInterstitialLoadSuccess:self];
     }
     // 上报日志
@@ -1080,12 +1097,12 @@
 
 - (void)nativeExpresInterstitialAdWillClose:(BUNativeExpressInterstitialAd *)interstitialAd {
     DLog(@"%s",__func__);
-    if (self.interstitialDelegate && [self.interstitialDelegate respondsToSelector:@selector(adapterInterstitialCloseFinished:)]) {
-        [self.interstitialDelegate adapterInterstitialCloseFinished:self];
-    }
+//    if (self.interstitialDelegate && [self.interstitialDelegate respondsToSelector:@selector(adapterInterstitialCloseFinished:)]) {
+//        [self.interstitialDelegate adapterInterstitialCloseFinished:self];
+//    }
     
-    self.needShow = NO;
-    [interstitialAd loadAdData];
+//    self.needShow = NO;
+//    [interstitialAd loadAdData];
 }
 
 - (void)nativeExpresInterstitialAdDidClose:(BUNativeExpressInterstitialAd *)interstitialAd {
