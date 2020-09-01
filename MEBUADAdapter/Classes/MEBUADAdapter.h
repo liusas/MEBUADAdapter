@@ -5,7 +5,7 @@
 //  Created by 刘峰 on 2019/11/7.
 //
 
-#import "MEBaseAdapter.h"
+#import <MEAdvSDK/MEBaseAdapter.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
