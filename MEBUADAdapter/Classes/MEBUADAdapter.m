@@ -12,7 +12,8 @@
 #import <BUAdSDK/BUAdSDK.h>
 #import <BUAdSDK/BUSplashAdView.h>
 
-@interface MEBUADAdapter ()<BUNativeExpressAdViewDelegate, BUNativeExpressRewardedVideoAdDelegate, BUSplashAdDelegate, BUNativeExpresInterstitialAdDelegate, BUNativeExpressFullscreenVideoAdDelegate>
+@interface MEBUADAdapter ()<BUNativeExpressAdViewDelegate, BUNativeExpressRewardedVideoAdDelegate, BUSplashAdDelegate, BUNativeExpresInterstitialAdDelegate, BUNativeExpressFullscreenVideoAdDelegate, BUNativeExpressBannerViewDelegate>
+
 /// 原生模板广告
 @property (strong, nonatomic) NSMutableArray<__kindof BUNativeExpressAdView *> *expressAdViews;
 /// 原生广告管理类
@@ -23,6 +24,10 @@
 @property (nonatomic, strong) BUNativeExpressFullscreenVideoAd *fullscreenVideoAd;
 /// 插屏广告管理
 @property (nonatomic, strong) BUNativeExpressInterstitialAd *interstitialAd;
+/// banner广告
+@property(nonatomic, strong) BUNativeExpressBannerView *bannerView;
+
+@property (nonatomic, strong) MEBannerView *bannerContainerView;
 
 /// 是否需要展示
 @property (nonatomic, assign) BOOL needShow;
@@ -326,6 +331,28 @@
 
 - (BOOL)hasInterstitialAvailableWithPosid:(NSString *)posid {
     return self.interstitialAd.isAdValid;
+}
+
+// MARK: - banner 广告
+- (void)showBannerViewWithSize:(CGSize)size posid:(NSString *)posid rootVC:(UIViewController *)rootVC refreshInterval:(NSTimeInterval)interval {
+    self.posid = posid;
+    
+    if (self.bannerView == nil) {
+        CGFloat bannerHeight = size.width/600*90;
+        self.bannerView = [[BUNativeExpressBannerView alloc] initWithSlotID:posid rootViewController:rootVC adSize:CGSizeMake(size.width, bannerHeight) IsSupportDeepLink:YES interval:interval];
+        
+        self.bannerView.frame = CGRectMake(0, 10, size.width, bannerHeight);
+        self.bannerView.delegate = self;
+        
+//        self.bannerContainerView = [[MEBannerView alloc] initWithBannerView:self.bannerView frame:self.bannerView.frame];
+    }
+    
+    // 回调到上层
+    if (self.bannerDelegate && [self.bannerDelegate respondsToSelector:@selector(adapterBannerReturnView:)]) {
+        [self.bannerDelegate adapterBannerReturnView:self.bannerView];
+    }
+    
+    [self.bannerView loadAdData];
 }
 
 #pragma mark - BUNativeExpressAdViewDelegate
@@ -1084,7 +1111,7 @@
     // 上报日志
     MEAdLogModel *model = [MEAdLogModel new];
     model.event = AdLogEventType_Click;
-    model.st_t = AdLogAdType_Splash;
+    model.st_t = AdLogAdType_Interstitial;
     model.so_t = self.sortType;
     model.posid = self.sceneId;
     model.network = self.networkName;
@@ -1122,6 +1149,111 @@
     }
 }
 
+//MARK: - BUNativeExpressBannerViewDelegate
+- (void)nativeExpressBannerAdViewDidLoad:(BUNativeExpressBannerView *)bannerAdView {
+    if (self.bannerDelegate && [self.bannerDelegate respondsToSelector:@selector(adapterBannerLoadSuccess:)]) {
+        [self.bannerDelegate adapterBannerLoadSuccess:self];
+    }
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Load;
+    model.st_t = AdLogAdType_Banner;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+
+- (void)nativeExpressBannerAdView:(BUNativeExpressBannerView *)bannerAdView didLoadFailWithError:(NSError *)error {
+    if (self.bannerDelegate && [self.bannerDelegate respondsToSelector:@selector(adapter:bannerFailure:)]) {
+        [self.bannerDelegate adapter:self bannerFailure:error];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Fault;
+    model.st_t = AdLogAdType_Banner;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.type = AdLogFaultType_Normal;
+    model.code = error.code;
+    if (error.localizedDescription != nil || error.localizedDescription.length > 0) {
+        model.msg = error.localizedDescription;
+    }
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+
+- (void)nativeExpressBannerAdViewRenderSuccess:(BUNativeExpressBannerView *)bannerAdView {
+}
+
+- (void)nativeExpressBannerAdViewRenderFail:(BUNativeExpressBannerView *)bannerAdView error:(NSError *)error {
+    if (self.bannerDelegate && [self.bannerDelegate respondsToSelector:@selector(adapter:bannerFailure:)]) {
+        [self.bannerDelegate adapter:self bannerFailure:error];
+    }
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Fault;
+    model.st_t = AdLogAdType_Banner;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.type = AdLogFaultType_Render;
+    model.code = error.code;
+    if (error.localizedDescription != nil || error.localizedDescription.length > 0) {
+        model.msg = error.localizedDescription;
+    }
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+
+- (void)nativeExpressBannerAdViewWillBecomVisible:(BUNativeExpressBannerView *)bannerAdView {
+    if (self.bannerDelegate && [self.bannerDelegate respondsToSelector:@selector(adapterBannerShowSuccess:)]) {
+        [self.bannerDelegate adapterBannerShowSuccess:self];
+    }
+}
+
+- (void)nativeExpressBannerAdViewDidClick:(BUNativeExpressBannerView *)bannerAdView {
+    if (self.bannerDelegate && [self.bannerDelegate respondsToSelector:@selector(adapterBannerClicked:)]) {
+        [self.bannerDelegate adapterBannerClicked:self];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Click;
+    model.st_t = AdLogAdType_Banner;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+
+- (void)nativeExpressBannerAdView:(BUNativeExpressBannerView *)bannerAdView dislikeWithReason:(NSArray<BUDislikeWords *> *)filterwords {
+    DLog(@"%s",__func__);
+    [UIView animateWithDuration:0.25 animations:^{
+        bannerAdView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [bannerAdView removeFromSuperview];
+        if (self.bannerView == bannerAdView) {
+            self.bannerView = nil;
+        }
+    }];
+}
 
 // MARK: - Private
 - (void)showFeedViewTimeout {
@@ -1136,5 +1268,4 @@
     
 //    NSError *error = [NSError errorWithDomain:@"BUADError" code:0 userInfo:@{NSLocalizedDescriptionKey: @"请求超时"}];
 }
-
 @end
