@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MEBUADAdapter'
-  s.version          = '1.0.8'
+  s.version          = '1.0.9'
   s.summary          = 'A adapter of BUAD for mediation SDK'
 
 # This description is used to generate tags and improve search results.
@@ -37,6 +37,6 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
 #   s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency "Bytedance-UnionAD", '2.9.5.8'
-  s.dependency "MEAdvSDK", '~> 1.0.3'
+  s.dependency "Bytedance-UnionAD", '3.2.6.2'
+  s.dependency "MEAdvSDK", '~> 1.0.4'
 end
