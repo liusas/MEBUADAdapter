@@ -8,11 +8,6 @@
 #import "MobiBUADBannerCustomEvent.h"
 #import <BUAdSDK/BUNativeExpressBannerView.h>
 
-#if __has_include("MobiPub.h")
-#import "MPLogging.h"
-#import "MobiBannerError.h"
-#endif
-
 @interface MobiBUADBannerCustomEvent ()<BUNativeExpressBannerViewDelegate>
 
 /// banner广告

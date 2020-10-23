@@ -10,12 +10,6 @@
 #import <BUAdSDK/BURewardedVideoAd.h>
 #import <BUAdSDK/BUNativeExpressRewardedVideoAd.h>
 
-#if __has_include("MobiPub.h")
-#import "MPLogging.h"
-#import "MobiRewardedVideoError.h"
-#import "MobiRewardedVideoReward.h"
-#endif
-
 
 @interface MobiBUADRewardedVideoCustomEvent () <BUNativeExpressRewardedVideoAdDelegate>
 @property(nonatomic, copy) NSString *posid;

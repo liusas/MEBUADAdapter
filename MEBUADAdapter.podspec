@@ -30,6 +30,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   s.source_files = 'MEBUADAdapter/Classes/**/*'
+#  s.vendored_framework = 'MEBUADAdapter-1.0.9/ios/*.framework'
   
   # s.resource_bundles = {
   #   'MEBUADAdapter' => ['MEBUADAdapter/Assets/*.png']

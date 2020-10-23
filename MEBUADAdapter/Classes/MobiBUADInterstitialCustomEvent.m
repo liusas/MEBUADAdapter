@@ -8,11 +8,6 @@
 #import "MobiBUADInterstitialCustomEvent.h"
 #import <BUAdSDK/BUNativeExpressInterstitialAd.h>
 
-#if __has_include("MobiPub.h")
-#import "MPLogging.h"
-#import "MobiInterstitialError.h"
-#endif
-
 @interface MobiBUADInterstitialCustomEvent ()<BUNativeExpresInterstitialAdDelegate>
 
 /// 插屏广告管理
@@ -95,9 +90,9 @@
 
 // MARK: - BUNativeExpresInterstitialAdDelegate
 - (void)nativeExpresInterstitialAdDidLoad:(BUNativeExpressInterstitialAd *)interstitialAd {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(interstitialCustomEvent:didLoadAd:)]) {
-        [self.delegate interstitialCustomEvent:self didLoadAd:nil];
-    }
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(interstitialCustomEvent:didLoadAd:)]) {
+//        [self.delegate interstitialCustomEvent:self didLoadAd:nil];
+//    }
 }
 
 - (void)nativeExpresInterstitialAd:(BUNativeExpressInterstitialAd *)interstitialAd didFailWithError:(NSError *)error {
@@ -111,13 +106,19 @@
 }
 
 - (void)nativeExpresInterstitialAdRenderSuccess:(BUNativeExpressInterstitialAd *)interstitialAd {
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(interstitialCustomEventRenderSuccess:)]) {
+//        [self.delegate interstitialCustomEventRenderSuccess:self];
+//    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(interstitialCustomEvent:didLoadAd:)]) {
+        [self.delegate interstitialCustomEvent:self didLoadAd:nil];
+    }
 }
 
 - (void)nativeExpresInterstitialAdRenderFail:(BUNativeExpressInterstitialAd *)interstitialAd error:(NSError *)error {
     self.rootVC = nil;
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(interstitialCustomEvent:didFailToLoadAdWithError:)]) {
-        [self.delegate interstitialCustomEvent:self didFailToLoadAdWithError:error];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(interstitialCustomEvent:renderFailed:)]) {
+        [self.delegate interstitialCustomEvent:self renderFailed:error];
     }
 }
 

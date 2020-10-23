@@ -10,11 +10,6 @@
 #import <BUAdSDK/BUNativeExpressAdView.h>
 #import "MEBUADAdapter.h"
 
-#if __has_include("MobiPub.h")
-#import "MPLogging.h"
-#import "MobiFeedError.h"
-#endif
-
 @interface MobiBUADFeedCustomEvent ()<BUNativeExpressAdViewDelegate>
 
 /// 原生模板广告

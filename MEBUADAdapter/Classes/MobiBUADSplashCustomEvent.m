@@ -8,11 +8,6 @@
 #import "MobiBUADSplashCustomEvent.h"
 #import <BUAdSDK/BUSplashAdView.h>
 
-#if __has_include("MobiPub.h")
-#import "MPLogging.h"
-#import "MobiSplashError.h"
-#endif
-
 @interface MobiBUADSplashCustomEvent ()<BUSplashAdDelegate>
 
 @property (nonatomic, strong) BUSplashAdView *splashView;

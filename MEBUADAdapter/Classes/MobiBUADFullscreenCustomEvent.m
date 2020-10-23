@@ -8,11 +8,6 @@
 #import "MobiBUADFullscreenCustomEvent.h"
 #import <BUAdSDK/BUNativeExpressFullscreenVideoAd.h>
 
-#if __has_include("MobiPub.h")
-#import "MPLogging.h"
-#import "MobiFullscreenError.h"
-#endif
-
 @interface MobiBUADFullscreenCustomEvent ()<BUNativeExpressFullscreenVideoAdDelegate>
 
 /// 全屏视频广告
