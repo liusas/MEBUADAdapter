@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MEBUADAdapter'
-  s.version          = '1.0.9'
+  s.version          = '1.0.10'
   s.summary          = 'A adapter of BUAD for mediation SDK'
 
 # This description is used to generate tags and improve search results.
