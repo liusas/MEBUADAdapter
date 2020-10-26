@@ -7,45 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B9C756C63486043D9B41582E820E446 /* MEBUADAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = F5370D8CC450F9F17EA1CACDEFE10014 /* MEBUADAdapter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		62708378922C8F3768CBBDE96828F7D2 /* MEBUADAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = BA787D6FFB62FC62C83EF6EFE630C060 /* MEBUADAdapter.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		650CC5579FCEAEF216EA423827637034 /* MEBUADAdapter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC2EE624BEA6460475B34A262A4E349 /* MEBUADAdapter-dummy.m */; };
+		03E14CB6AD7D7DF9D44720E45B882A25 /* MobiBUADRewardedVideoCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = E561A74399FB47B587246A0A3A5D07C9 /* MobiBUADRewardedVideoCustomEvent.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0D7CACABC32BB0E2BB055D556B19E987 /* MobiBUADFullscreenCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D6922151746E968CC8D75739623C7A66 /* MobiBUADFullscreenCustomEvent.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		27098E75F15F076E35A2ECABEFC16433 /* MobiBUADInterstitialCustomEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 377E0B0D8F1ADD58280A41314C4881F9 /* MobiBUADInterstitialCustomEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2F3301A72F7E52A82F8A520F3CF255FB /* MobiBUADSplashCustomEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D37880BFD90E1D0569B077283C1BAB7 /* MobiBUADSplashCustomEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3B1576C8BD3588B8D9139EBBD80F044F /* MobiBUADRewardedVideoCustomEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 92A9F6F73312E0D8E11612F450450738 /* MobiBUADRewardedVideoCustomEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		417865C50FD91C4A58C32DEC231F5399 /* MEBUADAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD314D419ECE24448F7A1B4BF97FE8B /* MEBUADAdapter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		61F2E979A548435C9B4B3595002B2A7F /* MobiBUADFeedCustomEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBDF02760EEE899E1B7409718FB4B6F /* MobiBUADFeedCustomEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		84DBF1FCAACF4642E7989E7AB568C392 /* MEBUADAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ACB8D2C61D9995689FC5C7CC1A90C46 /* MEBUADAdapter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8ABCC03DA4285CD48AEDCE62C408593E /* MEBUADAdapter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39146B94091BBF75B3D2BEA06D956EBA /* MEBUADAdapter-dummy.m */; };
+		9ABAF3624EFD29FE3BFA2E57ACDAB78E /* MobiBUADBannerCustomEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3625B8AF425F0B6060C281EB0E322A01 /* MobiBUADBannerCustomEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C0C994CD81728F52EE525DF8AFA6EB08 /* MobiBUADFeedCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2296E1B4B438673140E7956A51664278 /* MobiBUADFeedCustomEvent.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CD39915A8580F350888EFC03A93CD64C /* MobiBUADBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5D4AB3C09D0C395A039AC73A13D28B /* MobiBUADBannerCustomEvent.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D5BC85C3D6F23FD7176917550AA750B1 /* MobiBUADFullscreenCustomEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C633F5ED2821ED266B05060E256D1BC /* MobiBUADFullscreenCustomEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E4F64CB4F8A3A84CD5BFBE7DC7FBBD0D /* MobiBUADInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F6BBA4C2E6C81D70A9175D2C632799 /* MobiBUADInterstitialCustomEvent.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EA4479CF6705DC250B1B963FB556027E /* MobiBUADSplashCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5997207EEA4D258E6110472477253EC6 /* MobiBUADSplashCustomEvent.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		78FADD03A8FA3CA16E1FA880E71B2145 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
-			remoteInfo = MEAdvSDK;
-		};
-		8A1AAC615C83C3151936D944BE494649 /* PBXContainerItemProxy */ = {
+		2CA018C0B38ECDE9991DFFD9BD550759 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 5332E9233532B4756DF3841BFF2A4D94;
 			remoteInfo = "Bytedance-UnionAD";
 		};
+		6F7C730C85DF1C9BBEFF888A1BAC3847 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
+			remoteInfo = MEAdvSDK;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0027C3E07576F21C7660CF34D2F0A607 /* MEBUADAdapter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MEBUADAdapter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1527BE0E476F830631889FBFDFAAF994 /* Bytedance-UnionAD */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Bytedance-UnionAD"; path = "Bytedance-UnionAD.xcodeproj"; sourceTree = "<group>"; };
-		21A7A349B12CA74CF323FE6FFF02C739 /* MEBUADAdapter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEBUADAdapter.debug.xcconfig; sourceTree = "<group>"; };
-		5293139898A20A4AFCBC8A092276FC64 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		5C258EE6E0470508D105DF338878DDCB /* MEBUADAdapter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MEBUADAdapter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1FD861307C77B3CAA4377049DA3EB099 /* MEBUADAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MEBUADAdapter-prefix.pch"; sourceTree = "<group>"; };
+		2296E1B4B438673140E7956A51664278 /* MobiBUADFeedCustomEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MobiBUADFeedCustomEvent.m; path = MEBUADAdapter/Classes/MobiBUADFeedCustomEvent.m; sourceTree = "<group>"; };
+		2D37880BFD90E1D0569B077283C1BAB7 /* MobiBUADSplashCustomEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MobiBUADSplashCustomEvent.h; path = MEBUADAdapter/Classes/MobiBUADSplashCustomEvent.h; sourceTree = "<group>"; };
+		2E5D4AB3C09D0C395A039AC73A13D28B /* MobiBUADBannerCustomEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MobiBUADBannerCustomEvent.m; path = MEBUADAdapter/Classes/MobiBUADBannerCustomEvent.m; sourceTree = "<group>"; };
+		3625B8AF425F0B6060C281EB0E322A01 /* MobiBUADBannerCustomEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MobiBUADBannerCustomEvent.h; path = MEBUADAdapter/Classes/MobiBUADBannerCustomEvent.h; sourceTree = "<group>"; };
+		377E0B0D8F1ADD58280A41314C4881F9 /* MobiBUADInterstitialCustomEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MobiBUADInterstitialCustomEvent.h; path = MEBUADAdapter/Classes/MobiBUADInterstitialCustomEvent.h; sourceTree = "<group>"; };
+		39146B94091BBF75B3D2BEA06D956EBA /* MEBUADAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MEBUADAdapter-dummy.m"; sourceTree = "<group>"; };
+		42F6BBA4C2E6C81D70A9175D2C632799 /* MobiBUADInterstitialCustomEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MobiBUADInterstitialCustomEvent.m; path = MEBUADAdapter/Classes/MobiBUADInterstitialCustomEvent.m; sourceTree = "<group>"; };
+		4C633F5ED2821ED266B05060E256D1BC /* MobiBUADFullscreenCustomEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MobiBUADFullscreenCustomEvent.h; path = MEBUADAdapter/Classes/MobiBUADFullscreenCustomEvent.h; sourceTree = "<group>"; };
+		4CBDF02760EEE899E1B7409718FB4B6F /* MobiBUADFeedCustomEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MobiBUADFeedCustomEvent.h; path = MEBUADAdapter/Classes/MobiBUADFeedCustomEvent.h; sourceTree = "<group>"; };
+		5997207EEA4D258E6110472477253EC6 /* MobiBUADSplashCustomEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MobiBUADSplashCustomEvent.m; path = MEBUADAdapter/Classes/MobiBUADSplashCustomEvent.m; sourceTree = "<group>"; };
+		7A81996780E5D6E21E87FFB340C0D928 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		7C46F3E706550229B09DF2F25A8B6B3F /* libMEBUADAdapter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMEBUADAdapter.a; path = libMEBUADAdapter.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ACB8D2C61D9995689FC5C7CC1A90C46 /* MEBUADAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MEBUADAdapter.h; path = MEBUADAdapter/Classes/MEBUADAdapter.h; sourceTree = "<group>"; };
+		92A9F6F73312E0D8E11612F450450738 /* MobiBUADRewardedVideoCustomEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MobiBUADRewardedVideoCustomEvent.h; path = MEBUADAdapter/Classes/MobiBUADRewardedVideoCustomEvent.h; sourceTree = "<group>"; };
 		97AC95BA228854E0FF2CF9BD7653C8B4 /* MEAdvSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEAdvSDK; path = MEAdvSDK.xcodeproj; sourceTree = "<group>"; };
-		9BCE790821E4652BD48BB58262A8A172 /* MEBUADAdapter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEBUADAdapter.release.xcconfig; sourceTree = "<group>"; };
-		BA787D6FFB62FC62C83EF6EFE630C060 /* MEBUADAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MEBUADAdapter.h; path = MEBUADAdapter/Classes/MEBUADAdapter.h; sourceTree = "<group>"; };
-		C4C7524F9DF6C806C0095266D848E1F3 /* MEBUADAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MEBUADAdapter-prefix.pch"; sourceTree = "<group>"; };
-		DCC2EE624BEA6460475B34A262A4E349 /* MEBUADAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MEBUADAdapter-dummy.m"; sourceTree = "<group>"; };
-		E79E601E3CD3280C9264BA2648E088E7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		F5370D8CC450F9F17EA1CACDEFE10014 /* MEBUADAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MEBUADAdapter.m; path = MEBUADAdapter/Classes/MEBUADAdapter.m; sourceTree = "<group>"; };
+		9B3481851AA014601A743193AE05AA43 /* MEBUADAdapter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEBUADAdapter.release.xcconfig; sourceTree = "<group>"; };
+		AA53D733FA2B6A936F916ADB71214F7F /* MEBUADAdapter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEBUADAdapter.debug.xcconfig; sourceTree = "<group>"; };
+		D6922151746E968CC8D75739623C7A66 /* MobiBUADFullscreenCustomEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MobiBUADFullscreenCustomEvent.m; path = MEBUADAdapter/Classes/MobiBUADFullscreenCustomEvent.m; sourceTree = "<group>"; };
+		DF55E4C3C2E5E9727267FD5DD630BD50 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E561A74399FB47B587246A0A3A5D07C9 /* MobiBUADRewardedVideoCustomEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MobiBUADRewardedVideoCustomEvent.m; path = MEBUADAdapter/Classes/MobiBUADRewardedVideoCustomEvent.m; sourceTree = "<group>"; };
+		EDD314D419ECE24448F7A1B4BF97FE8B /* MEBUADAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MEBUADAdapter.m; path = MEBUADAdapter/Classes/MEBUADAdapter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DA9D5AC72FFD298AB976ED6A9CB33A4D /* Frameworks */ = {
+		ACABD1D9F1C5A5967ED81FC0661E5227 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,16 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06F856759977BE5F767E6C7FDFEB587E /* Support Files */ = {
+		2861027F4A66D2B80A4507BDA38C13A5 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				DCC2EE624BEA6460475B34A262A4E349 /* MEBUADAdapter-dummy.m */,
-				C4C7524F9DF6C806C0095266D848E1F3 /* MEBUADAdapter-prefix.pch */,
-				21A7A349B12CA74CF323FE6FFF02C739 /* MEBUADAdapter.debug.xcconfig */,
-				9BCE790821E4652BD48BB58262A8A172 /* MEBUADAdapter.release.xcconfig */,
+				7A81996780E5D6E21E87FFB340C0D928 /* LICENSE */,
+				0027C3E07576F21C7660CF34D2F0A607 /* MEBUADAdapter.podspec */,
+				DF55E4C3C2E5E9727267FD5DD630BD50 /* README.md */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/MEBUADAdapter";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		4BF2FFEACDDCF4FD7E150E3B300591D6 /* Products */ = {
@@ -75,14 +97,40 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A05C59B60DBDC2707238F135897389FE /* Pod */ = {
+		4D1A4406ED417FEC369F75394B433C19 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5293139898A20A4AFCBC8A092276FC64 /* LICENSE */,
-				5C258EE6E0470508D105DF338878DDCB /* MEBUADAdapter.podspec */,
-				E79E601E3CD3280C9264BA2648E088E7 /* README.md */,
+				39146B94091BBF75B3D2BEA06D956EBA /* MEBUADAdapter-dummy.m */,
+				1FD861307C77B3CAA4377049DA3EB099 /* MEBUADAdapter-prefix.pch */,
+				AA53D733FA2B6A936F916ADB71214F7F /* MEBUADAdapter.debug.xcconfig */,
+				9B3481851AA014601A743193AE05AA43 /* MEBUADAdapter.release.xcconfig */,
 			);
-			name = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MEBUADAdapter";
+			sourceTree = "<group>";
+		};
+		A15E658F0491936C9E781B9F80778296 /* MEBUADAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				8ACB8D2C61D9995689FC5C7CC1A90C46 /* MEBUADAdapter.h */,
+				EDD314D419ECE24448F7A1B4BF97FE8B /* MEBUADAdapter.m */,
+				3625B8AF425F0B6060C281EB0E322A01 /* MobiBUADBannerCustomEvent.h */,
+				2E5D4AB3C09D0C395A039AC73A13D28B /* MobiBUADBannerCustomEvent.m */,
+				4CBDF02760EEE899E1B7409718FB4B6F /* MobiBUADFeedCustomEvent.h */,
+				2296E1B4B438673140E7956A51664278 /* MobiBUADFeedCustomEvent.m */,
+				4C633F5ED2821ED266B05060E256D1BC /* MobiBUADFullscreenCustomEvent.h */,
+				D6922151746E968CC8D75739623C7A66 /* MobiBUADFullscreenCustomEvent.m */,
+				377E0B0D8F1ADD58280A41314C4881F9 /* MobiBUADInterstitialCustomEvent.h */,
+				42F6BBA4C2E6C81D70A9175D2C632799 /* MobiBUADInterstitialCustomEvent.m */,
+				92A9F6F73312E0D8E11612F450450738 /* MobiBUADRewardedVideoCustomEvent.h */,
+				E561A74399FB47B587246A0A3A5D07C9 /* MobiBUADRewardedVideoCustomEvent.m */,
+				2D37880BFD90E1D0569B077283C1BAB7 /* MobiBUADSplashCustomEvent.h */,
+				5997207EEA4D258E6110472477253EC6 /* MobiBUADSplashCustomEvent.m */,
+				2861027F4A66D2B80A4507BDA38C13A5 /* Pod */,
+				4D1A4406ED417FEC369F75394B433C19 /* Support Files */,
+			);
+			name = MEBUADAdapter;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		A8B5533E648F4AD1414F17CB7F81172A = {
@@ -90,7 +138,7 @@
 			children = (
 				B68E4B08A902288827F4DE15E8DA2387 /* Dependencies */,
 				E7494A5E809BC6D425F871DAAFD653C5 /* Frameworks */,
-				FBB2058C8656FA849D09903FE0CAF9CD /* MEBUADAdapter */,
+				A15E658F0491936C9E781B9F80778296 /* MEBUADAdapter */,
 				4BF2FFEACDDCF4FD7E150E3B300591D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,26 +159,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FBB2058C8656FA849D09903FE0CAF9CD /* MEBUADAdapter */ = {
-			isa = PBXGroup;
-			children = (
-				BA787D6FFB62FC62C83EF6EFE630C060 /* MEBUADAdapter.h */,
-				F5370D8CC450F9F17EA1CACDEFE10014 /* MEBUADAdapter.m */,
-				A05C59B60DBDC2707238F135897389FE /* Pod */,
-				06F856759977BE5F767E6C7FDFEB587E /* Support Files */,
-			);
-			name = MEBUADAdapter;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D38DFAD9A13CECD876F6FC5BE66872AC /* Headers */ = {
+		4DD8610C7590DC4FF0875BBA9E953F6D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62708378922C8F3768CBBDE96828F7D2 /* MEBUADAdapter.h in Headers */,
+				84DBF1FCAACF4642E7989E7AB568C392 /* MEBUADAdapter.h in Headers */,
+				9ABAF3624EFD29FE3BFA2E57ACDAB78E /* MobiBUADBannerCustomEvent.h in Headers */,
+				61F2E979A548435C9B4B3595002B2A7F /* MobiBUADFeedCustomEvent.h in Headers */,
+				D5BC85C3D6F23FD7176917550AA750B1 /* MobiBUADFullscreenCustomEvent.h in Headers */,
+				27098E75F15F076E35A2ECABEFC16433 /* MobiBUADInterstitialCustomEvent.h in Headers */,
+				3B1576C8BD3588B8D9139EBBD80F044F /* MobiBUADRewardedVideoCustomEvent.h in Headers */,
+				2F3301A72F7E52A82F8A520F3CF255FB /* MobiBUADSplashCustomEvent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,17 +181,17 @@
 /* Begin PBXNativeTarget section */
 		B15F76109BA310E5F33DFF6121526034 /* MEBUADAdapter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7C60301FB6048CC9A29E4D8C30DE308 /* Build configuration list for PBXNativeTarget "MEBUADAdapter" */;
+			buildConfigurationList = 9342EEC44DE01C8991360859F53362DB /* Build configuration list for PBXNativeTarget "MEBUADAdapter" */;
 			buildPhases = (
-				D38DFAD9A13CECD876F6FC5BE66872AC /* Headers */,
-				242B7A68A9A76C8E1B6E5DBD79BFFF42 /* Sources */,
-				DA9D5AC72FFD298AB976ED6A9CB33A4D /* Frameworks */,
+				4DD8610C7590DC4FF0875BBA9E953F6D /* Headers */,
+				741EFF65B43BE8C840EF4ECB2DA5E736 /* Sources */,
+				ACABD1D9F1C5A5967ED81FC0661E5227 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BD69EECFF362B58B3CE41C83CFA2D34B /* PBXTargetDependency */,
-				5DC55C49CFFC71EA32183CC0C05DE949 /* PBXTargetDependency */,
+				0ABF5CD0933D97CAF8EB895300BDA22F /* PBXTargetDependency */,
+				15182B800D35C376E522A992D6FB2CF7 /* PBXTargetDependency */,
 			);
 			name = MEBUADAdapter;
 			productName = MEBUADAdapter;
@@ -192,58 +234,40 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		242B7A68A9A76C8E1B6E5DBD79BFFF42 /* Sources */ = {
+		741EFF65B43BE8C840EF4ECB2DA5E736 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				650CC5579FCEAEF216EA423827637034 /* MEBUADAdapter-dummy.m in Sources */,
-				3B9C756C63486043D9B41582E820E446 /* MEBUADAdapter.m in Sources */,
+				8ABCC03DA4285CD48AEDCE62C408593E /* MEBUADAdapter-dummy.m in Sources */,
+				417865C50FD91C4A58C32DEC231F5399 /* MEBUADAdapter.m in Sources */,
+				CD39915A8580F350888EFC03A93CD64C /* MobiBUADBannerCustomEvent.m in Sources */,
+				C0C994CD81728F52EE525DF8AFA6EB08 /* MobiBUADFeedCustomEvent.m in Sources */,
+				0D7CACABC32BB0E2BB055D556B19E987 /* MobiBUADFullscreenCustomEvent.m in Sources */,
+				E4F64CB4F8A3A84CD5BFBE7DC7FBBD0D /* MobiBUADInterstitialCustomEvent.m in Sources */,
+				03E14CB6AD7D7DF9D44720E45B882A25 /* MobiBUADRewardedVideoCustomEvent.m in Sources */,
+				EA4479CF6705DC250B1B963FB556027E /* MobiBUADSplashCustomEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5DC55C49CFFC71EA32183CC0C05DE949 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MEAdvSDK;
-			targetProxy = 78FADD03A8FA3CA16E1FA880E71B2145 /* PBXContainerItemProxy */;
-		};
-		BD69EECFF362B58B3CE41C83CFA2D34B /* PBXTargetDependency */ = {
+		0ABF5CD0933D97CAF8EB895300BDA22F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Bytedance-UnionAD";
-			targetProxy = 8A1AAC615C83C3151936D944BE494649 /* PBXContainerItemProxy */;
+			targetProxy = 2CA018C0B38ECDE9991DFFD9BD550759 /* PBXContainerItemProxy */;
+		};
+		15182B800D35C376E522A992D6FB2CF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MEAdvSDK;
+			targetProxy = 6F7C730C85DF1C9BBEFF888A1BAC3847 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		6EE7FF1C058BC02B90AA3EABF384A6C8 /* Debug */ = {
+		764F24E5C6487BE730A909C042205C98 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21A7A349B12CA74CF323FE6FFF02C739 /* MEBUADAdapter.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/MEBUADAdapter/MEBUADAdapter-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = MEBUADAdapter;
-				PRODUCT_NAME = MEBUADAdapter;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		ABFBC0C86A7D415141ED023B0588B82D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BCE790821E4652BD48BB58262A8A172 /* MEBUADAdapter.release.xcconfig */;
+			baseConfigurationReference = 9B3481851AA014601A743193AE05AA43 /* MEBUADAdapter.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -390,14 +414,38 @@
 			};
 			name = Debug;
 		};
+		FE346F2CA209E8AAA6DC24463F63F588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA53D733FA2B6A936F916ADB71214F7F /* MEBUADAdapter.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/MEBUADAdapter/MEBUADAdapter-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MEBUADAdapter;
+				PRODUCT_NAME = MEBUADAdapter;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C7C60301FB6048CC9A29E4D8C30DE308 /* Build configuration list for PBXNativeTarget "MEBUADAdapter" */ = {
+		9342EEC44DE01C8991360859F53362DB /* Build configuration list for PBXNativeTarget "MEBUADAdapter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6EE7FF1C058BC02B90AA3EABF384A6C8 /* Debug */,
-				ABFBC0C86A7D415141ED023B0588B82D /* Release */,
+				FE346F2CA209E8AAA6DC24463F63F588 /* Debug */,
+				764F24E5C6487BE730A909C042205C98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

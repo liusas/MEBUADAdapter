@@ -1,1 +1,0 @@
-../../../MEAdvSDK/MEAdvSDK/Classes/Platform/Mobipub/MobipubSDK/Categories/SKStoreProductViewController+MPAdditions.h

@@ -54,3 +54,13 @@
 
 /// playable tool
 #import <BUAdSDK/BUAdSDKPlayableToolManager.h>
+
+// smartlook
+#import <BUAdSDK/BUAdSmartlookManager.h>
+
+/// test tools
+#import <BUAdSDK/BUAdSDKTestToolManager.h>
+
+/// pangle view
+#import <BUAdSDK/PangleNativeBannerView.h>
+#import <BUAdSDK/PangleNativeInterstitialView.h>

@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "EBAppLogConfig.h"
+#import "EBAppLogDelegateProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,16 +16,23 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface EBAppLog : NSObject
 
+/*! @abstract settings delegate */
+@property (class, nonatomic, copy) id<EBAppLogDelegateProtocol> delegate;
+
 /*! @abstract The SDK version. */
 @property (class, nonatomic, copy, readonly) NSString *sdkVersion;
 
 /*! @abstract The unique device ID that get from register server. */
 @property (class, nonatomic, copy, readonly, nullable) NSString *deviceID;
 
-/*! @abstract The unique install ID that get from register server. */
+/*! @abstract The unique install ID that get from register server.
+ @discussion Embed版本值为nil
+ */
 @property (class, nonatomic, copy, readonly, nullable) NSString *installID;
 
-/*! @abstract The unique ssID that get from register server. */
+/*! @abstract The unique ssID that get from register server.
+ @discussion Embed版本值为nil
+ */
 @property (class, nonatomic, copy, readonly, nullable) NSString *ssID;
 
 /*! @abstract 初始化注册

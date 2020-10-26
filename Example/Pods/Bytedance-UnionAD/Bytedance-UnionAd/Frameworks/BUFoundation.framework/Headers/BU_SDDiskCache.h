@@ -12,7 +12,7 @@
 /**
  A protocol to allow custom disk cache used in SDImageCache.
  */
-@protocol SDDiskCache <NSObject>
+@protocol BU_SDDiskCache <NSObject>
 
 // All of these method are called from the same global queue to avoid blocking on main queue and thread-safe problem. But it's also recommend to ensure thread-safe yourself using lock or other ways.
 @required
@@ -102,7 +102,7 @@
 /**
  The built-in disk cache.
  */
-@interface BU_SDDiskCache : NSObject <SDDiskCache>
+@interface BU_SDDiskCache : NSObject <BU_SDDiskCache>
 /**
  Cache Config object - storing all kind of settings.
  */

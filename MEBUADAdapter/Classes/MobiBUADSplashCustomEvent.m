@@ -50,11 +50,11 @@
     splashView.delegate = self;
     [splashView loadAdData];
     self.splashView = splashView;
+    [self.rootVC.view addSubview:self.splashView];
+    self.splashView.rootViewController = self.rootVC;
 }
 
 - (void)presentSplashFromWindow:(UIWindow *)window {
-    [self.rootVC.view addSubview:self.splashView];
-    self.splashView.rootViewController = self.rootVC;
 }
 
 - (BOOL)hasAdAvailable

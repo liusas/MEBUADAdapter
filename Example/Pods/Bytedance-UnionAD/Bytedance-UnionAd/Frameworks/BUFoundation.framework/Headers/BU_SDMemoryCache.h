@@ -12,7 +12,7 @@
 /**
  A protocol to allow custom memory cache used in SDImageCache.
  */
-@protocol SDMemoryCache <NSObject>
+@protocol BU_SDMemoryCache <NSObject>
 
 @required
 /**
@@ -70,7 +70,7 @@
 /**
  A memory cache which auto purge the cache on memory warning and support weak cache.
  */
-@interface BU_SDMemoryCache <KeyType, ObjectType> : NSCache <KeyType, ObjectType> <SDMemoryCache>
+@interface BU_SDMemoryCache <KeyType, ObjectType> : NSCache <KeyType, ObjectType> <BU_SDMemoryCache>
 
 @property (nonatomic, strong, nonnull, readonly) BU_SDImageCacheConfig *config;
 

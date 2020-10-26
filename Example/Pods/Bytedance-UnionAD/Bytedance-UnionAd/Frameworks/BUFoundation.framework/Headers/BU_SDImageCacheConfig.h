@@ -10,15 +10,15 @@
 #import "BU_SDWebImageCompat.h"
 
 /// Image Cache Expire Type
-typedef NS_ENUM(NSUInteger, SDImageCacheConfigExpireType) {
+typedef NS_ENUM(NSUInteger, BU_SDImageCacheConfigExpireType) {
     /**
      * When the image is accessed it will update this value
      */
-    SDImageCacheConfigExpireTypeAccessDate,
+    BU_SDImageCacheConfigExpireTypeAccessDate,
     /**
      * The image was obtained from the disk cache (Default)
      */
-    SDImageCacheConfigExpireTypeModificationDate
+    BU_SDImageCacheConfigExpireTypeModificationDate
 };
 
 /**
@@ -102,7 +102,7 @@ typedef NS_ENUM(NSUInteger, SDImageCacheConfigExpireType) {
  * The attribute which the clear cache will be checked against when clearing the disk cache
  * Default is Modified Date
  */
-@property (assign, nonatomic) SDImageCacheConfigExpireType diskCacheExpireType;
+@property (assign, nonatomic) BU_SDImageCacheConfigExpireType diskCacheExpireType;
 
 /**
  * The custom file manager for disk cache. Pass nil to let disk cache choose the proper file manager.

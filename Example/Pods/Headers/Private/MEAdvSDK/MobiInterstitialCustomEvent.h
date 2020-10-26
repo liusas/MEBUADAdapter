@@ -1,1 +1,0 @@
-../../../MEAdvSDK/MEAdvSDK/Classes/Platform/Mobipub/MobipubSDK/Interstitial/Adapter/MobiInterstitialCustomEvent.h

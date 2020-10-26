@@ -1,1 +1,0 @@
-../../../MEAdvSDK/MEAdvSDK/Classes/Platform/Mobipub/MobipubSDK/Common/AdConfigurationModel/Video/MobiAdVideoVideoAdm.h

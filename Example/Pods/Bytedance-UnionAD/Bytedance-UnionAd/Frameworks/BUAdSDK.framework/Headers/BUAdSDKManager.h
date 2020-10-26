@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "BUAdSDKDefines.h"
+#import "BUMopubAdMarkUpDelegate.h"
 
 typedef void (^BUConfirmGDPR)(BOOL isAgreed);
 
@@ -49,6 +50,15 @@ typedef void (^BUConfirmGDPR)(BOOL isAgreed);
 /// @params GDPR 0 close privacy protection, 1 open privacy protection
 + (void)setGDPR:(NSInteger)GDPR;
 
+/// Custom set the AB vid of the user. Array element type is NSNumber
++ (void)setABVidArray:(NSArray<NSNumber *> *)abvids;
+
+/// Custom set the tob ab sdk version of the user.
++ (void)setABSDKVersion:(NSString *)abSDKVersion;
+
+/// Custom set disable sdadnetwork. if won't need skadnetwork to record conversion set disable to YES, default is enable
++ (void)setDisableSKAdNetwork:(BOOL)disable;
+
 /// Open GDPR Privacy for the user to choose before setAppID.
 + (void)openGDPRPrivacyFromRootViewController:(UIViewController *)rootViewController confirm:(BUConfirmGDPR)confirm;
 
@@ -63,3 +73,7 @@ typedef void (^BUConfirmGDPR)(BOOL isAgreed);
 
 @end
 
+
+@interface BUAdSDKManager (MopubAdaptor) <BUMopubAdMarkUpDelegate>
+
+@end

@@ -1,15 +1,9 @@
 PODS:
-  - Bytedance-UnionAD (2.9.5.8)
-  - MEAdvSDK (1.0.2):
-    - Reachability
-    - Realm (~> 4.4.1)
-  - MEBUADAdapter (1.0.6):
-    - Bytedance-UnionAD (= 2.9.5.8)
-    - MEAdvSDK (~> 1.0.2)
-  - Reachability (3.2)
-  - Realm (4.4.1):
-    - Realm/Headers (= 4.4.1)
-  - Realm/Headers (4.4.1)
+  - Bytedance-UnionAD (3.2.6.2)
+  - MEAdvSDK (1.0.15)
+  - MEBUADAdapter (1.0.11):
+    - Bytedance-UnionAD (= 3.2.6.2)
+    - MEAdvSDK (~> 1.0.15)
 
 DEPENDENCIES:
   - MEBUADAdapter (from `../`)
@@ -18,20 +12,16 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Bytedance-UnionAD
     - MEAdvSDK
-    - Reachability
-    - Realm
 
 EXTERNAL SOURCES:
   MEBUADAdapter:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Bytedance-UnionAD: af6f65144b4fce6329946e89f262ffc8c6c1937c
-  MEAdvSDK: 3c710e03b869ee5fc780a0a9118db256a2e1e74d
-  MEBUADAdapter: bba530c2f8f36d2b5aed9b478465d73094f790dc
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
+  Bytedance-UnionAD: ee419a461654e1c2338b5f6b0b2224617b230640
+  MEAdvSDK: 9a59be817f18f66def4da0c159e7eeb159eab3d7
+  MEBUADAdapter: 2cbe8253a28130f5213445e9d80178e1bd304529
 
-PODFILE CHECKSUM: 2a198bb20cfc84e86441fec2da01718e99b4c497
+PODFILE CHECKSUM: 361c4f5917a396e1f3eac3c6bbbfd3e3bf91cce0
 
 COCOAPODS: 1.9.3

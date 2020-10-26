@@ -98,12 +98,14 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/Bytedance-UnionAD/Bytedance-UnionAd/Frameworks/BUAdSDK.bundle"
+  install_resource "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MobiAdapters.plist"
   install_resource "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MEAdvBundle.bundle"
   install_resource "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MobiPubSDK.bundle"
   install_resource "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MRAID.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/Bytedance-UnionAD/Bytedance-UnionAd/Frameworks/BUAdSDK.bundle"
+  install_resource "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MobiAdapters.plist"
   install_resource "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MEAdvBundle.bundle"
   install_resource "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MobiPubSDK.bundle"
   install_resource "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MRAID.bundle"
