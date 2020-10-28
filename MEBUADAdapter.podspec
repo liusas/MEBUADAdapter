@@ -40,5 +40,5 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
 #   s.dependency 'AFNetworking', '~> 2.3'
   s.dependency "Bytedance-UnionAD", '3.2.6.2'
-  s.dependency "MEAdvSDK", '~> 1.0.15'
+  s.dependency "MEAdvSDK", '~> 1.0.17'
 end
