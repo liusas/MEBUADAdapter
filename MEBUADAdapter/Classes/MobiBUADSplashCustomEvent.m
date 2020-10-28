@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) BUSplashAdView *splashView;
 @property (nonatomic, strong) UIViewController *rootVC;
+@property (nonatomic, strong) UIView *bottomView;
 
 @end
 
@@ -40,6 +41,7 @@
         frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds) - CGRectGetHeight(bottomView.frame));
         bottomView.frame = CGRectMake(0, CGRectGetHeight([UIScreen mainScreen].bounds) - CGRectGetHeight(bottomView.frame), CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight(bottomView.frame));
         [vc.view addSubview:bottomView];
+        self.bottomView = bottomView;
     }
     
     self.rootVC = vc;
@@ -97,6 +99,7 @@
 }
 
 - (void)splashAdDidClose:(BUSplashAdView *)splashAd {
+    [self.bottomView removeFromSuperview];
     [splashAd removeFromSuperview];
     if (self.delegate && [self.delegate respondsToSelector:@selector(splashAdClosedForCustomEvent:)]) {
         [self.delegate splashAdClosedForCustomEvent:self];
@@ -104,6 +107,7 @@
 }
 
 - (void)splashAd:(BUSplashAdView *)splashAd didFailWithError:(NSError *)error {
+    [self.bottomView removeFromSuperview];
     [splashAd removeFromSuperview];
     if (self.delegate && [self.delegate respondsToSelector:@selector(splashAdFailToPresentForCustomEvent:withError:)]) {
         [self.delegate splashAdFailToPresentForCustomEvent:self withError:error];
