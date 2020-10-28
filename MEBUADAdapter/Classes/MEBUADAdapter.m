@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, BUADAdapterErrorCode) {
 #pragma mark - MPAdapterConfiguration
 
 - (NSString *)adapterVersion {
-    return @"1.0.9";
+    return @"1.0.12";
 }
 
 - (NSString *)biddingToken {
@@ -80,20 +80,18 @@ typedef NS_ENUM(NSInteger, BUADAdapterErrorCode) {
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSString *appid = configuration[kBUADAppID];
-            
-            [BUAdSDKManager setAppID:appid];
+        NSString *appid = configuration[kBUADAppID];
+//        [BUAdSDKManager setAppID:@"5000546"];
+        [BUAdSDKManager setAppID:appid];
 #if DEBUG
-            // Whether to open log. default is none.
-            [BUAdSDKManager setLoglevel:BUAdSDKLogLevelDebug];
+        // Whether to open log. default is none.
+        [BUAdSDKManager setLoglevel:BUAdSDKLogLevelDebug];
 #endif
-            [BUAdSDKManager setIsPaidApp:NO];
-            
-            if (complete != nil) {
-                complete(nil);
-            }
-        });
+        [BUAdSDKManager setIsPaidApp:NO];
+        
+        if (complete != nil) {
+            complete(nil);
+        }
     });
 }
 

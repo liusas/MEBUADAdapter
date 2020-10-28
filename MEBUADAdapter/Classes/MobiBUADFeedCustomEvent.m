@@ -102,7 +102,7 @@
 
 - (void)nativeExpressAdFailToLoad:(BUNativeExpressAdManager *)nativeExpressAd error:(NSError *)error {
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdSuccessToLoadForCustomEvent:views:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdFailToLoadForCustomEvent:error:)]) {
         [self.delegate nativeExpressAdFailToLoadForCustomEvent:self error:error];
     }
 }
@@ -120,7 +120,9 @@
 }
 
 - (void)nativeExpressAdViewWillShow:(BUNativeExpressAdView *)nativeExpressAdView {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewExposureForCustomEvent:)]) {
+        [self.delegate nativeExpressAdViewExposureForCustomEvent:nativeExpressAdView];
+    }
 }
 
 - (void)nativeExpressAdViewDidClick:(BUNativeExpressAdView *)nativeExpressAdView {

@@ -172,7 +172,10 @@
 }
 
 - (void)nativeExpressRewardedVideoAdServerRewardDidSucceed:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd verify:(BOOL)verify {
-    
+    MobiRewardedVideoReward *reward = [[MobiRewardedVideoReward alloc] initWithCurrencyType:rewardedVideoAd.rewardedVideoModel.rewardName amount:@(rewardedVideoAd.rewardedVideoModel.rewardAmount)];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(rewardedVideoDidReceiveTapEventForCustomEvent:)]) {
+        [self.delegate rewardedVideoShouldRewardUserForCustomEvent:self reward:reward];
+    }
 }
 
 /**

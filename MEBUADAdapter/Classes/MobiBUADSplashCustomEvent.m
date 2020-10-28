@@ -44,6 +44,7 @@
     
     self.rootVC = vc;
     
+//    BUSplashAdView *splashView = [[BUSplashAdView alloc] initWithSlotID:@"800546808" frame:frame];
     BUSplashAdView *splashView = [[BUSplashAdView alloc] initWithSlotID:adUnitId frame:frame];
     // tolerateTimeout = CGFLOAT_MAX , The conversion time to milliseconds will be equal to 0
     splashView.tolerateTimeout = delay != 0 ? delay : 3;
