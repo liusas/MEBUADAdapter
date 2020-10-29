@@ -150,11 +150,9 @@ Sent when a playerw playback status changed.
 - (void)nativeExpressAdView:(BUNativeExpressAdView *)nativeExpressAdView dislikeWithReason:(NSArray<BUDislikeWords *> *)filterWords {
     //【重要】需要在点击叉以后 在这个回调中移除视图，否则，会出现用户点击叉无效的情况
     [self.expressAdViews removeObject:nativeExpressAdView];
-}
-
-- (void)nativeExpressAdViewDidClosed:(BUNativeExpressAdView *)nativeExpressAdView {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewDidClosedCustomEvent:)]) {
-        [self.delegate nativeExpressAdViewDidClosedCustomEvent:nativeExpressAdView];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewClosedForCustomEvent:)]) {
+        [self.delegate nativeExpressAdViewClosedForCustomEvent:nativeExpressAdView];
     }
 }
 
@@ -163,6 +161,10 @@ Sent when a playerw playback status changed.
     if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewWillPresentScreenForCustomEvent:)]) {
         [self.delegate nativeExpressAdViewWillPresentScreenForCustomEvent:nativeExpressAdView];
     }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewDidPresentScreenForCustomEvent:)]) {
+        [self.delegate nativeExpressAdViewDidPresentScreenForCustomEvent:nativeExpressAdView];
+    }
 }
 
 /**
@@ -170,8 +172,13 @@ Sent when a playerw playback status changed.
  @param interactionType : open appstore in app or open the webpage or view video ad details page.
  */
 - (void)nativeExpressAdViewDidCloseOtherController:(BUNativeExpressAdView *)nativeExpressAdView interactionType:(BUInteractionType)interactionType {
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewWillDissmissScreenForCustomEvent:)]) {
         [self.delegate nativeExpressAdViewWillDissmissScreenForCustomEvent:nativeExpressAdView];
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewDidDissmissScreenForCustomEvent:)]) {
+        [self.delegate nativeExpressAdViewDidDissmissScreenForCustomEvent:nativeExpressAdView];
     }
 }
 
