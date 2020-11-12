@@ -14,6 +14,8 @@
 @property (nonatomic, strong) UIViewController *rootVC;
 @property (nonatomic, strong) UIView *bottomView;
 
+@property (nonatomic, strong) UIButton *customSkipBtn;
+
 @end
 
 @implementation MobiBUADSplashCustomEvent
@@ -22,6 +24,11 @@
     NSString *adUnitId = [info objectForKey:@"adunit"];
     UIView *bottomView = [info objectForKey:@"bottomView"];
     NSTimeInterval delay = [[info objectForKey:@"delay"] floatValue];
+    
+    BOOL hideSkipBtn = NO;
+    if ([self.localExtras[@"hideSkipBtn"] boolValue] == YES) {
+        hideSkipBtn = YES;
+    }
     
     if (adUnitId == nil) {
         NSError *error = [NSError splashErrorWithCode:MobiSplashAdErrorNoAdsAvailable localizedDescription:@"posid cannot be nil"];
@@ -32,6 +39,11 @@
     }
     
     UIViewController *vc = [self topVC];
+    
+    if ([NSStringFromClass(vc.class) containsString:@"BUNative"]) {
+        vc = [UIApplication sharedApplication].keyWindow.rootViewController;
+    }
+    
     if (!vc) {
         return;
     }
@@ -51,10 +63,32 @@
     // tolerateTimeout = CGFLOAT_MAX , The conversion time to milliseconds will be equal to 0
     splashView.tolerateTimeout = delay != 0 ? delay : 3;
     splashView.delegate = self;
+    splashView.hideSkipButton = hideSkipBtn;
     [splashView loadAdData];
     self.splashView = splashView;
     [self.rootVC.view addSubview:self.splashView];
     self.splashView.rootViewController = self.rootVC;
+    
+    BOOL isPhoneX = NO;
+    if (@available(iOS 11.0, *)) {\
+        isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+    }
+    
+    if (hideSkipBtn) {
+        float width = 30;
+        float x = splashView.frame.origin.x + splashView.frame.size.width - width - 20;
+        float y = splashView.frame.origin.y + isPhoneX ? 44 + 20 : 20;
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setImage:self.localExtras[@"closeImage"] forState:UIControlStateNormal];
+        button.frame = CGRectMake(x, y, width, width);
+//        button.backgroundColor = UIColor.whiteColor;
+        button.layer.cornerRadius = width /2.f;
+        [splashView addSubview:button];
+        
+        [button addTarget:self action:@selector(skipBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        self.customSkipBtn = button;
+    }
 }
 
 - (void)presentSplashFromWindow:(UIWindow *)window {
@@ -93,17 +127,23 @@
 }
 
 - (void)splashAdWillClose:(BUSplashAdView *)splashAd {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(splashAdWillClosedForCustomEvent:)]) {
-        [self.delegate splashAdWillClosedForCustomEvent:self];
+    if (!self.customSkipBtn) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(splashAdWillClosedForCustomEvent:)]) {
+            [self.delegate splashAdWillClosedForCustomEvent:self];
+        }
     }
 }
 
 - (void)splashAdDidClose:(BUSplashAdView *)splashAd {
-    [self.bottomView removeFromSuperview];
-    [splashAd removeFromSuperview];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(splashAdClosedForCustomEvent:)]) {
-        [self.delegate splashAdClosedForCustomEvent:self];
+    if (!self.customSkipBtn) {
+        [self.bottomView removeFromSuperview];
+        [splashAd removeFromSuperview];
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(splashAdClosedForCustomEvent:)]) {
+            [self.delegate splashAdClosedForCustomEvent:self];
+        }
     }
+    
 }
 
 - (void)splashAd:(BUSplashAdView *)splashAd didFailWithError:(NSError *)error {
@@ -158,6 +198,19 @@
         topVC = topVC.presentedViewController;
     }
     return topVC;
+}
+
+- (void)skipBtnClick {
+    [self.bottomView removeFromSuperview];
+    [self.splashView removeFromSuperview];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(splashAdWillClosedForCustomEvent:)]) {
+        [self.delegate splashAdWillClosedForCustomEvent:self];
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(splashAdClosedForCustomEvent:)]) {
+        [self.delegate splashAdClosedForCustomEvent:self];
+    }
 }
 
 

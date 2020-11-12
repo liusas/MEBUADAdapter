@@ -76,6 +76,10 @@ typedef NS_ENUM(NSInteger, BUADAdapterErrorCode) {
     return NSClassFromString(@"MobiBUADFullscreenCustomEvent");
 }
 
+- (Class)getDrawViewCustomEvent {
+    return NSClassFromString(@"MobiBUADDrawViewCustomEvent");
+}
+
 - (void)initializeNetworkWithConfiguration:(NSDictionary<NSString *,id> *)configuration complete:(void (^)(NSError * _Nullable))complete {
 
     static dispatch_once_t onceToken;
